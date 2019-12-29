@@ -1,7 +1,7 @@
 // 封装axios请求
 import axios from 'axios'
 import qs from 'qs'
-import { Loading } from 'element-ui'
+// import { Loading } from 'element-ui'
 
 let loading = null
 
@@ -15,7 +15,7 @@ const isProduction = process.env.NODE_ENV === 'production'
 const service = axios.create()
 
 // 接口基础路径
-service.defaults.baseURL = isProduction ? 'http://localhost:3000' : '/api'
+service.defaults.baseURL = isProduction ? 'http://localhost:7001/v1' : '/api'
     // 超时时间
 service.defaults.timeout = 10000
     // 请求头类型
@@ -23,9 +23,9 @@ service.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencod
 
 // 请求拦截器
 service.interceptors.request.use(config => {
-    loading = Loading.service({
-        text: '正在加载中......'
-    })
+    // loading = Loading.service({
+    //     text: '正在加载中......'
+    // })
     let token = localStorage.getItem('adminToken')
         // 每次请求 都在请求头带上token
     if (token) {
@@ -40,9 +40,9 @@ service.interceptors.request.use(config => {
 
 // 响应拦截器
 service.interceptors.response.use(response => {
-    if (loading) {
-        loading.close()
-    }
+    // if (loading) {
+    //     loading.close()
+    // }
     return response.data
 }, err => {
     // if (err.response.status === 401) {
