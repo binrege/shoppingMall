@@ -2,14 +2,14 @@ import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
 import store from './store'
-import http from './http'
+import api from './http/api'
 import axios from 'axios'
 import dayjs from 'dayjs'
-import ElementUI from 'element-ui';
-import 'element-ui/lib/theme-chalk/index.css';
-
-Vue.use(ElementUI);
-Vue.prototype.$axios = http
+import Vant from 'vant';
+import 'vant/lib/index.css';
+import BScroll from "better-scroll";
+Vue.use(Vant);
+Vue.prototype.$api = api
 Vue.prototype.$dayjs = dayjs
 Vue.config.productionTip = false
 

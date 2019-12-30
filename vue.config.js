@@ -1,5 +1,15 @@
 // vue的配置文件
 module.exports = {
+        configureWebpack: { //配置别名
+            resolve: {
+                alias: {
+                    "assets": "@/assets",
+                    "components": "@/components",
+                    "views": "@/views",
+                }
+            }
+        },
+
         publicPath: "./",
         // webpack是一个打包工具 项目优化和打包都是通过webpack
         // webpack提供的本地服务
@@ -19,6 +29,7 @@ module.exports = {
                     // 修改了vue.config.js文件 一定要重启项目
                     // http://localhost:3000
                     // 接口的根路径就被代理成了/api
+
                     target: 'http://localhost:7001/v1',
                     changeOrigin: true,
                     pathRewrite: {
