@@ -36,4 +36,8 @@ export default {
  background: rgb(240, 230, 230);
  padding: 5px 5px;
 }
+/deep/ .van-tabbar--fixed{
+  left: 5px;
+  width: 97%;
+}
 </style>

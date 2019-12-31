@@ -1,9 +1,7 @@
 <template>
-  <div class="recommends">
-    <div>商品推荐</div>
-    <div class="personWrap" ref="personWrap">
+   <div class="personWrap" ref="personWrap">
       <div ref="personTab" class="personTab">
-        <div class="recommend" v-for="(item,index) in recomend" :key="index">
+        <!-- <div class="recommend" v-for="(item,index) in recomend" :key="index">
           <div>
             <img :src="item.image" alt />
           </div>
@@ -18,32 +16,22 @@
             </div>
             <div>查看详情</div>
           </div>
-        </div>
+        </div> -->
+        
       </div>
     </div>
-  </div>
 </template>
 
 <script>
-import BScroll from "better-scroll";
 export default {
   name: "",
   data() {
-    return {
-      recomends: null
-    };
+    return {};
   },
-  props: {
-    recomend: {
-      type: Array,
-      default: () => []
-    }
-  },
+  props: {},
   components: {},
-
   methods: {
     personScroll() {
-      console.log(this.recomend);
       // 默认有六个li子元素，每个子元素的宽度为120px
       let width = this.recomend.length * 131;
       this.$refs.personTab.style.width = width + "px";
@@ -64,11 +52,6 @@ export default {
       });
     }
   },
-  updated() {
-    this.$nextTick(() => {
-      this.personScroll();
-    });
-  },
   mounted() {},
   watch: {},
   computed: {}
@@ -76,23 +59,6 @@ export default {
 </script>
 
 <style scoped lang='scss'>
-.recommends {
-  background: white;
-
-  margin: 5px 0;
-  overflow: hidden;
-}
-.recommends > div:first-child {
-  margin: 10px 10px 0 10px;
-}
-.recommends > div > div {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-}
-img {
-  height: 32.333vw;
-}
 .personWrap {
   overflow: hidden;
 }
@@ -101,48 +67,5 @@ img {
   font-size: 12px;
   text-align: center;
   padding-right: 0.24rem;
-}
-.icon > div {
-  height: 30px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.icon > div:first-child {
-  background: rgb(252, 248, 5);
-  flex: 1;
-  border-bottom-left-radius: 5px;
-  border-top-left-radius: 5px;
-}
-.icon > div:last-child {
-  background: #e23a18;
-  flex: 2;
-  border-bottom-right-radius: 5px;
-  border-top-right-radius: 5px;
-}
-.icon {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.recommend {
-  padding: 5px;
-}
-.goodsName {
-  width: 27.667vw;
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-}
-.price {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  font-size: 14px;
-  span {
-    font-size: 2.2vw;
-    color: #666;
-    text-decoration: line-through;
-  }
 }
 </style>

@@ -1,9 +1,24 @@
 <template>
-  <div>
+  <div class="Index">
     <Top></Top>
-    <Wheelplanting :slides="recomend.slides"></Wheelplanting>
-    <Category :category="recomend.category"></Category>
-    <Recommend :recomend="recomend.recommend"></Recommend>
+   
+    <van-pull-refresh v-model="isLoading" loading-text="正在刷新..." success-text="刷新成功" @refresh="onRefresh">
+      
+      <Wheelplanting :slides="recomend.slides"></Wheelplanting>
+      <Category :category="recomend.category"></Category>
+      <div v-if="recomend.advertesPicture">
+        <Advertisement :advertesPicture="recomend.advertesPicture"></Advertisement>
+      </div> 
+      <Recommend :recomend="recomend.recommend"></Recommend>
+   
+
+    <div v-if="recomend.floorName">
+      <Floor :floor="recomend.floor1" :num="1" :floorName="recomend.floorName.floor1"></Floor>
+      <Floor :floor="recomend.floor2" :num="2" :floorName="recomend.floorName.floor2"></Floor>
+      <Floor :floor="recomend.floor3" :num="3" :floorName="recomend.floorName.floor3"></Floor>
+    </div>
+    </van-pull-refresh>
+    <HotGoods :hotGoods="recomend.hotGoods"></HotGoods>
   </div>
 </template>
 
@@ -12,11 +27,17 @@ import Top from "../components/index/search/Top";
 import Wheelplanting from "../components/index/lunbo/Wheelplanting";
 import Category from "../components/index/category/Category";
 import Recommend from "../components/index/recommend/Recommend";
+import Advertisement from "../components/index/advertisement/Advertisement";
+import Floor from "../components/index/floor/Floor";
+import HotGoods from "../components/index/hotGoods/HotGoods";
+import scroll from "../components/common/scroll";
 export default {
   name: "",
   data() {
     return {
-      recomend:{},
+      recomend: {},
+       count: 0,
+      isLoading: false
     };
   },
   props: {},
@@ -24,21 +45,34 @@ export default {
     Top,
     Wheelplanting,
     Category,
+    Advertisement,
     Recommend,
-
+    Floor,
+    HotGoods,
+    scroll,
   },
   methods: {
-     getRecommend(){
-      this.$api.getRecommend().then(res=>{
-        console.log(res);
-        this.recomend=res.data
-      }).catch(err=>{
-        console.log(err);
-      })
+    getRecommend() {
+      this.$api
+        .getRecommend()
+        .then(res => {
+          console.log(res);
+          this.recomend = res.data;
+        })
+        .catch(err => {
+          console.log(err);
+        });
+    },
+       onRefresh() {
+      setTimeout(() => {
+        // this.$toast('刷新成功');
+        this.isLoading = false;
+        this.count++;
+      }, 500);
     }
   },
   mounted() {
-    this.getRecommend()
+    this.getRecommend();
   },
   watch: {},
   computed: {}
@@ -46,4 +80,7 @@ export default {
 </script>
 
 <style scoped lang='scss'>
+.Index{
+  overflow: hidden;
+}
 </style>

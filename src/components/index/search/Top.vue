@@ -52,11 +52,17 @@ export default {
 
 <style scoped lang='scss'>
 .Indextop{
+  width:99%;
+  position: fixed;
+  top: 0;
+  left: 0;
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  margin: 5px 0;
+  margin: 0 0 5px 0;
   font-size: 14px;
+  z-index: 999;
+background: rgb(240, 230, 230);
   .location{
     height: 40px;
     width: 70px;

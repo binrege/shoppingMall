@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="lunbo">
     <van-swipe :autoplay="3000">
       <van-swipe-item v-for="(item,index) in slides" :key="index">
         <img :src="item.image" />
@@ -35,5 +35,8 @@ export default {
 <style scoped lang='scss'>
 img{
   height:43.333vw;
+}
+.lunbo{
+  margin-top:10vw;
 }
 </style>
