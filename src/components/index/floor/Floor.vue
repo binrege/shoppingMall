@@ -27,10 +27,9 @@ export default {
       type: String,
       default: ""
     },
-    num:{
-      type:Number,
-      default:0
-
+    num: {
+      type: Number,
+      default: 0
     }
   },
   components: {},
@@ -43,15 +42,23 @@ export default {
 
 <style scoped lang='scss'>
 .aaa {
- overflow: hidden;
+  width: 100%;
+  overflow: hidden;
+  div{
+   float: left;
+  }
+}
+.aaa>div:nth-child(2){
+  height: 97.26px;
 }
 img {
-  width: 48.667vw;
-  margin:0;
-  padding:0;
-  float: left;
+  width: 50vw;
+  margin: 0;
+  padding: 0;
+ 
 }
 .floorNum {
+  font-size: 14px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -66,6 +73,9 @@ img {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin:10px 10px 2.533vw 0;
+  margin: 10px 10px 2.533vw 0;
 }
+// .floor{
+//   display: inline-block;
+// }
 </style>

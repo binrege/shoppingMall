@@ -34,10 +34,11 @@ export default {
 <style scoped lang='scss'>
 #home{
  background: rgb(240, 230, 230);
- padding: 5px 5px;
 }
 /deep/ .van-tabbar--fixed{
-  left: 5px;
-  width: 97%;
+  // left: 5px;
+  // width: 97%;
+  height: 8vh;
+  background: white;
 }
 </style>

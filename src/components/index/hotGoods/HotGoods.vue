@@ -59,9 +59,9 @@ export default {
     }
   },
   updated() {
-    this.$nextTick(() => {
-      this.personScroll();
-    });
+    // this.$nextTick(() => {
+    //   this.personScroll();
+    // });
   },
   mounted() {},
   watch: {},
@@ -73,9 +73,17 @@ export default {
 .hotGood {
   width: 100vm;
   color: red;
+  
   overflow: hidden;
-  height: 700px;
+  // height: 700px;
    background: white;
+}
+.hotGoods>div:first-child{
+  font-size: 14px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding:10px;
 }
 .price {
   display: flex;

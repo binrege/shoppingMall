@@ -1,38 +1,37 @@
 <template>
- <div>
-分类
- </div>
+  <div>
+    <TopTittle>商品分类</TopTittle>
+    <div class="Bar">
+        <SideBar></SideBar>
+    </div>
+  </div>
 </template>
 
 <script>
- export default {
-name:'',
-   data () {
-     return {
+import TopTittle from "../components/common/TopTittle";
+import SideBar from "../components/index/category/SideBar";
+export default {
+  name: "",
+  data() {
+    return {
+      
+    };
+  },
+  props: {},
+  components: {
+    TopTittle,
+    SideBar,
+  },
+  methods: {
 
-     }
-   },
-   props: {
-
-   },
-   components: {
-
-   },
-   methods: {
-
-   },
-   mounted() {
-
-   },
-   watch: {
-
-   },
-   computed: {
-
-   }
- }
+  },
+  mounted() {
+    
+  },
+  watch: {},
+  computed: {}
+};
 </script>
 
 <style scoped lang='scss'>
-
 </style>

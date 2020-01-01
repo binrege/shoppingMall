@@ -1,9 +1,29 @@
 <template>
-  <div class="recommends">
+  <div v-if="recomend.length>0" class="recommends">
     <div>商品推荐</div>
-    <div class="personWrap" ref="personWrap">
+    <!-- <div class="personWrap" ref="personWrap">
       <div ref="personTab" class="personTab">
         <div class="recommend" v-for="(item,index) in recomend" :key="index">
+          <div>
+            <img :src="item.image" alt />
+          </div>
+          <div class="goodsName">{{item.goodsName}}</div>
+          <div class="price"> 
+            ￥{{item.mallPrice}}
+            <span>￥{{item.price}}</span>
+          </div>
+          <div class="icon">
+            <div>
+              <van-icon name="cart" size="20" color="white"/>
+            </div>
+            <div>查看详情</div>
+          </div>
+        </div>
+      </div>
+    </div> -->
+     <scroll class="wrapper" :data="recomend" :scrollX="true">
+      <div ref="content" class="content">
+        <div class="recommend" ref="itemWidth" v-for="(item,index) in recomend" :key="index">
           <div>
             <img :src="item.image" alt />
           </div>
@@ -20,56 +40,37 @@
           </div>
         </div>
       </div>
-    </div>
+    </scroll>
   </div>
+  <div v-else>加载中...</div>
 </template>
 
 <script>
-import BScroll from "better-scroll";
+import scroll from "../../common/scroll";
 export default {
   name: "",
   data() {
     return {
-      recomends: null
     };
   },
   props: {
     recomend: {
       type: Array,
       default: () => []
-    }
+    },
   },
-  components: {},
+  components: {scroll},
 
   methods: {
-    personScroll() {
-      console.log(this.recomend);
-      // 默认有六个li子元素，每个子元素的宽度为120px
-      let width = this.recomend.length * 131;
-      this.$refs.personTab.style.width = width + "px";
-      // this.$nextTick 是一个异步函数，为了确保 DOM 已经渲染
-      this.$nextTick(() => {
-        if (!this.scroll) {
-          this.scroll = new BScroll(this.$refs.personWrap, {
-            startX: 0,
-            click: true,
-            scrollX: true,
-            // 忽略竖直方向的滚动
-            scrollY: false,
-            eventPassthrough: "vertical"
-          });
-        } else {
-          this.scroll.refresh();
-        }
-      });
-    }
+   
+    
   },
   updated() {
-    this.$nextTick(() => {
-      this.personScroll();
-    });
+    this.$refs.content.style.width=this.recomend.length*131+"px"
   },
-  mounted() {},
+  mounted() {
+   
+  },
   watch: {},
   computed: {}
 };
@@ -77,15 +78,19 @@ export default {
 
 <style scoped lang='scss'>
 .recommends {
-  background: white;
-
-  margin: 5px 0;
-  overflow: hidden;
+ background: white;
+  
+  margin:5px 0;
+  overflow:hidden;
 }
-.recommends > div:first-child {
-  margin: 10px 10px 0 10px;
+.recommends>div:first-child{
+  padding: 10px;
 }
+// .recommends > div:first-child{
+//   margin:10px 10px 0 10px;
+// }
 .recommends > div > div {
+
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -93,56 +98,68 @@ export default {
 img {
   height: 32.333vw;
 }
-.personWrap {
-  overflow: hidden;
-}
-.personTab {
-  white-space: nowrap;
-  font-size: 12px;
-  text-align: center;
-  padding-right: 0.24rem;
-}
-.icon > div {
-  height: 30px;
-  display: flex;
+// .personWrap {
+//   overflow: hidden;
+
+// }
+// .personTab {
+//   white-space: nowrap;
+//   font-size: 12px;
+//   text-align: center;
+//   padding-right: 0.24rem;
+// }
+.icon>div{
+ height: 30px;
+ display: flex;
+ font-size: 14px;
   justify-content: center;
   align-items: center;
 }
-.icon > div:first-child {
+.icon>div:first-child{
+  
   background: rgb(252, 248, 5);
-  flex: 1;
-  border-bottom-left-radius: 5px;
-  border-top-left-radius: 5px;
+ flex: 1;
+ border-bottom-left-radius: 5px;
+ border-top-left-radius: 5px;
+
 }
-.icon > div:last-child {
-  background: #e23a18;
-  flex: 2;
-  border-bottom-right-radius: 5px;
-  border-top-right-radius: 5px;
+.icon>div:last-child{
+  background: #E23A18;
+ flex: 2;
+ border-bottom-right-radius: 5px;
+ border-top-right-radius: 5px;
+ 
 }
-.icon {
+.icon{
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.recommend {
-  padding: 5px;
+.recommend{
+
+ padding:5px;
 }
-.goodsName {
+.goodsName{
   width: 27.667vw;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
 }
-.price {
-  display: flex;
+.price{
+  display:flex;
   justify-content: flex-start;
-  align-items: center;
+  align-items:center;
   font-size: 14px;
-  span {
+  span{
     font-size: 2.2vw;
     color: #666;
     text-decoration: line-through;
   }
+  
+}
+.wrapper{
+  width: 100vm;
+  overflow: hidden;
+  touch-action: none;
 }
 </style>

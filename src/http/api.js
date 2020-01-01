@@ -19,5 +19,10 @@ export default {
     //购物车
     getCar() {
         return service.req("/getCard", {})
-    }
+    },
+    //获取分类商品列表`/classification?mallSubId=${id}`
+    getClassification({ mallSubId }) {
+        return service.req(`/classification?mallSubId=${mallSubId}`)
+    },
+
 }

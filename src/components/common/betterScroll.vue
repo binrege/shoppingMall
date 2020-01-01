@@ -1,8 +1,8 @@
 <template>
+  <!--该节点需要定位，内容以此节点的盒模型为基础滚动。另外，该节点的背景色配合上拉加载、下拉刷新的UI，正常情况下不可作它用。-->
   <div ref="wrapper" class="better-scroll-root">
-    <!--该节点需要定位，内容以此节点的盒模型为基础滚动。另外，该节点的背景色配合上拉加载、下拉刷新的UI，正常情况下不可作它用。-->
+    <!--如果需要调滚动内容的背景色，则改该节点的背景色-->
     <div class="content-bg better-scroll-container">
-      <!--如果需要调滚动内容的背景色，则改该节点的背景色-->
       <div>
         <!--不太需要，待优化-->
         <div v-if="pulldown" class="pulldown-tip">
@@ -52,6 +52,10 @@ export default {
      * 是否开启横向滚动
      */
     scrollX: {
+      type: Boolean,
+      default: false
+    },
+    scrollY: {
       type: Boolean,
       default: false
     },
@@ -148,11 +152,25 @@ export default {
         return;
       }
       // better-scroll的初始化
-      this.scroll = new BScroll(this.$refs.wrapper, {
-        probeType: this.probeType,
-        click: this.click,
-        scrollX: this.scrollX
-      });
+      if (this.scrollX) {
+        this.scroll = new BScroll(this.$refs.wrapper, {
+          probeType: this.probeType,
+          click: this.click,
+          scrollX: this.scrollX,
+          scrollY: false,
+          eventPassthrough: "vertical"
+        });
+      }
+
+      if (this.scrollY) {
+        this.scroll = new BScroll(this.$refs.wrapper, {
+          probeType: this.probeType,
+          click: this.click,
+          scrollX: false,
+          scrollY: this.scrollY,
+          eventPassthrough: "horizontal"
+        });
+      }
 
       // 是否派发滚动事件
       if (this.listenScroll || this.pulldown || this.pullup) {
@@ -164,6 +182,7 @@ export default {
 
           if (this.pulldown) {
             // 下拉动作
+            console.log(pos.y);
             if (pos.y > 50) {
               this.pulldownTip = {
                 text: "松开立即刷新",
@@ -198,14 +217,14 @@ export default {
       if (this.pulldown) {
         this.scroll.on("touchend", pos => {
           // 下拉动作
-          if (pos.y > 50) {
+          if (pos.y >50) {
             setTimeout(() => {
               // 重置提示信息
               this.pulldownTip = {
                 text: "下拉刷新", // 松开立即刷新
                 rotate: "" // icon-rotate
               };
-            }, 600);
+            }, 5000);
             this.$emit("pulldown");
           }
         });
@@ -239,6 +258,17 @@ export default {
       this.scroll && this.scroll.scrollToElement.apply(this.scroll, arguments);
     }
   },
+  mounted() {
+    // 保证在DOM渲染完毕后初始化better-scroll
+    setTimeout(() => {
+      this._initScroll();
+    }, 20);
+  },
+  updated() {
+    setTimeout(() => {
+      this._initScroll();
+    }, 20);
+  },
   watch: {
     // 监听数据的变化，延时refreshDelay时间后调用refresh方法重新计算，保证滚动效果正常
     data() {
@@ -249,15 +279,15 @@ export default {
   }
 };
 </script>
-<style lang="scss" rel="stylesheet/scss">
+<style lang="scss" scoped>
 $cube-size: 10px; // 项目中用了scss，没用的话，替换掉样式中的变量即可
 .better-scroll-root {
-  background-color: rgba(7, 17, 27, 0.7);
+  // background-color: rgba(7, 17, 27, 0.7);
   .loading-pos,
   .pulldown-tip {
     position: absolute;
     left: 0;
-    top: 0;
+    top: 100px;
     width: 100%;
     height: 35px;
     color: #fcfcfc;

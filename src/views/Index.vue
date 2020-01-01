@@ -1,24 +1,36 @@
 <template>
-  <div class="Index">
-    <Top></Top>
-   
-    <van-pull-refresh v-model="isLoading" loading-text="正在刷新..." success-text="刷新成功" @refresh="onRefresh">
-      
-      <Wheelplanting :slides="recomend.slides"></Wheelplanting>
-      <Category :category="recomend.category"></Category>
-      <div v-if="recomend.advertesPicture">
-        <Advertisement :advertesPicture="recomend.advertesPicture"></Advertisement>
-      </div> 
-      <Recommend :recomend="recomend.recommend"></Recommend>
-   
-
-    <div v-if="recomend.floorName">
-      <Floor :floor="recomend.floor1" :num="1" :floorName="recomend.floorName.floor1"></Floor>
-      <Floor :floor="recomend.floor2" :num="2" :floorName="recomend.floorName.floor2"></Floor>
-      <Floor :floor="recomend.floor3" :num="3" :floorName="recomend.floorName.floor3"></Floor>
+  <div class="Index" ref="Index">
+    <div class="top">
+      <Top></Top>
     </div>
-    </van-pull-refresh>
-    <HotGoods :hotGoods="recomend.hotGoods"></HotGoods>
+    <scroll
+      class="wrapper"
+      :data="recomend.hotGoods"
+      :scrollY="true"
+    >
+      <div v-if="recomend" ref="content" class="content">
+        <van-pull-refresh
+          v-model="isLoading"
+          loading-text="正在刷新..."
+          success-text="刷新成功"
+          @refresh="onRefresh"
+        > 
+          <Wheelplanting :slides="recomend.slides"></Wheelplanting>
+          <Category :category="recomend.category"></Category>
+          <div v-if="recomend.advertesPicture">
+            <Advertisement :advertesPicture="recomend.advertesPicture"></Advertisement>
+          </div>
+          <Recommend :recomend="recomend.recommend"></Recommend>
+          <div v-if="recomend.floorName">
+            <Floor :floor="recomend.floor1" :num="1" :floorName="recomend.floorName.floor1"></Floor>
+            <Floor :floor="recomend.floor2" :num="2" :floorName="recomend.floorName.floor2"></Floor>
+            <Floor :floor="recomend.floor3" :num="3" :floorName="recomend.floorName.floor3"></Floor>
+          </div>
+          </van-pull-refresh>
+        <!--  -->
+        <HotGoods :hotGoods="recomend.hotGoods"></HotGoods>
+      </div>
+    </scroll>
   </div>
 </template>
 
@@ -36,8 +48,9 @@ export default {
   data() {
     return {
       recomend: {},
-       count: 0,
-      isLoading: false
+      count: 0,
+      isLoading: true,
+      pulldown: true
     };
   },
   props: {},
@@ -49,7 +62,7 @@ export default {
     Recommend,
     Floor,
     HotGoods,
-    scroll,
+    scroll
   },
   methods: {
     getRecommend() {
@@ -58,18 +71,32 @@ export default {
         .then(res => {
           console.log(res);
           this.recomend = res.data;
+          this.$store.state.category=res.data.category
+         
+          
         })
         .catch(err => {
           console.log(err);
         });
     },
-       onRefresh() {
+    loadData() {
+      this.getRecommend();
+    },
+    onRefresh() {
       setTimeout(() => {
         // this.$toast('刷新成功');
         this.isLoading = false;
         this.count++;
       }, 500);
     }
+  },
+  created() {
+    this.loadData();
+  },
+  updated() {
+    // this.$refs.content.style.height =4180+ "px";
+    // console.log(this.$refs);
+    
   },
   mounted() {
     this.getRecommend();
@@ -80,7 +107,11 @@ export default {
 </script>
 
 <style scoped lang='scss'>
-.Index{
+
+.wrapper {
+  height: 92.5vh;
   overflow: hidden;
+  touch-action: none;
 }
+
 </style>

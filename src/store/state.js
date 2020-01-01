@@ -1,4 +1,7 @@
 export default {
     num: 0,
-    citys: []
+    citys: [],
+    category: [
+
+    ]
 }

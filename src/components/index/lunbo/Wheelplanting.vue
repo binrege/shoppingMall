@@ -34,7 +34,7 @@ export default {
 
 <style scoped lang='scss'>
 img{
-  height:43.333vw;
+  height:44.333vw;
 }
 .lunbo{
   margin-top:10vw;
