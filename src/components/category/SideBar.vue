@@ -9,7 +9,6 @@
         />
       </van-sidebar>
     </div>
-
     <van-tabs :active="active" :ellipsis="false" @click="getClassification">
       <scroll class="wrapper" :scrollY="true">
         <div ref="content" class="content">
@@ -18,7 +17,7 @@
               <div>
                 <img :src="item.image" alt />
               </div>
-              <div>
+              <div class="rightcontant">
                 <div class="goodName">{{item.name}}</div>
                 <div class="price">
                   ￥{{item.present_price}}
@@ -34,7 +33,7 @@
 </template>
 
 <script>
-import scroll from "../../common/scroll";
+import scroll from "../common/scroll";
 export default {
   name: "",
   data() {
@@ -50,15 +49,23 @@ export default {
   components: { scroll },
   methods: {
     onChange(index) {
-      this.bxMallSubDto = this.category[index].bxMallSubDto;
+      if(this.category[index].bxMallSubDto){
+        this.bxMallSubDto = this.category[index].bxMallSubDto;
+      this.getData(0);
+      }
+      
     },
     getClassification(name, title) {
+      this.getData(name);
+    },
+    getData(name) { 
+      this.active=name
       this.$api
         .getClassification({
           mallSubId: this.category[this.activeKey].bxMallSubDto[name].mallSubId
         })
         .then(res => {
-          console.log(res);
+          // console.log(res);
           this.classifyList = res.dataList;
         })
         .catch(err => {
@@ -67,9 +74,22 @@ export default {
     }
   },
   mounted() {
-    this.category = this.$store.state.category;
-    this.bxMallSubDto = this.category[0].bxMallSubDto;
-    console.log(this.category);
+    if (this.$route.query.id) {
+      //首页跳转过来显示内容
+      this.activeKey = this.$route.query.id;
+      this.category = this.$store.state.category;
+      if (this.category[this.activeKey].bxMallSubDto) {
+        this.bxMallSubDto = this.category[this.activeKey].bxMallSubDto;
+        this.getData(0);
+      }
+    } else {
+      // 底部导航过来后初始化显示内容
+      this.category = this.$store.state.category;
+      if (this.category[0].bxMallSubDto) {
+        this.bxMallSubDto = this.category[0].bxMallSubDto;
+        this.getData(0);
+      }
+    }
   },
   watch: {},
   computed: {}
@@ -77,13 +97,12 @@ export default {
 </script>
 
 <style scoped lang='scss'>
-.items{
+.items {
   display: flex;
-
 }
 .Bar {
   display: flex;
-  height: 88vh;
+  height: 87vh;
   background: white;
 }
 .leftBar {
@@ -105,7 +124,43 @@ img {
 }
 .wrapper {
   height: 80vh;
-   overflow: hidden;
+  overflow: hidden;
   touch-action: none;
+}
+.price {
+  color: red;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: 14px;
+  font-weight: bold;
+  span {
+    font-size: 3.2vw;
+    color: #666;
+    text-decoration: line-through;
+    font-weight: lighter;
+    margin-left: 6px;
+  }
+}
+.goodName {
+  width: 180px;
+  padding: 0 5px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  // justify-content: flex-start !important;
+
+  font-size: 14px;
+
+  height: 20px;
+}
+.rightcontant {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: flex-start;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 </style>

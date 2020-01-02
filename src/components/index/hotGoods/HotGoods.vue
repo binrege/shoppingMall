@@ -35,7 +35,7 @@ export default {
   components: {},
   methods: {
     personScroll() {
-      console.log(this.hotGoods);
+    
       // 默认有六个li子元素，每个子元素的宽度为120px
     //   let height = this.hotGoods.length/2 * 231+600;
     // console.log(height);

@@ -129,7 +129,7 @@ export default {
       }
 
       // 是否派发顶部下拉事件，用于下拉刷新
-      console.log(this.pulldown);
+  
       if (this.pulldown) {
         this.scroll.on("touchend", pos => {
           // 下拉动作

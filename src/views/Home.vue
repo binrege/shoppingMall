@@ -3,7 +3,7 @@
 
     <router-view />
 
-    <van-tabbar route fixed>
+    <van-tabbar route fixed v-model="active">
       <van-tabbar-item replace to="/" icon="wap-home-o">首页</van-tabbar-item>
       <van-tabbar-item replace to="/category" icon="wap-nav">分类</van-tabbar-item>
       <van-tabbar-item replace to="/shoppingCar" icon="shopping-cart-o" info="5">购物车</van-tabbar-item>
@@ -16,7 +16,9 @@
 export default {
   name: "home",
   data() {
-    return {};
+    return {
+      active:0,
+    };
   },
   props: {},
   components: {},

@@ -66,7 +66,9 @@ export default {
     
   },
   updated() {
-    this.$refs.content.style.width=this.recomend.length*131+"px"
+    // console.log(this.$refs.itemWidth);
+    // console.log(this.$refs.itemWidth[0].offsetWidth);
+    // this.$refs.content.style.width=this.recomend.length*131+"px"
   },
   mounted() {
    
@@ -81,7 +83,7 @@ export default {
  background: white;
   
   margin:5px 0;
-  overflow:hidden;
+  // overflow:hidden;
 }
 .recommends>div:first-child{
   padding: 10px;
@@ -89,12 +91,7 @@ export default {
 // .recommends > div:first-child{
 //   margin:10px 10px 0 10px;
 // }
-.recommends > div > div {
 
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-}
 img {
   height: 32.333vw;
 }
@@ -158,8 +155,15 @@ img {
   
 }
 .wrapper{
-  width: 100vm;
+  width: 100vw;
   overflow: hidden;
   touch-action: none;
+  display: flex;
+}
+.content{
+  // flex:1;
+  display: flex;
+  // justify-content: flex-start;
+  align-items: center;
 }
 </style>

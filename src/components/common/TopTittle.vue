@@ -46,14 +46,15 @@ name:'',
 
 <style scoped lang='scss'>
 .TopTittle{
-  height:4vh;
+  height:5vh;
 }
 .container{
   background: white;
   font-size: 5.267vw;
   display: flex;
-  padding:5px 0;
-  justify-content: flex-start;
+ height: 5vh;
+ align-items: center;
+
 }
 .container>div{
   flex: 1;

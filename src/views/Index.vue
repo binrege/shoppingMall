@@ -69,7 +69,7 @@ export default {
       this.$api
         .getRecommend()
         .then(res => {
-          console.log(res);
+        
           this.recomend = res.data;
           this.$store.state.category=res.data.category
          
@@ -91,14 +91,17 @@ export default {
     }
   },
   created() {
+
     this.loadData();
   },
   updated() {
+    console.log(this.$store.state.user);
     // this.$refs.content.style.height =4180+ "px";
     // console.log(this.$refs);
     
   },
   mounted() {
+
     this.getRecommend();
   },
   watch: {},

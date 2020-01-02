@@ -40,7 +40,7 @@ export default {
       citySearch.getLocalCity(function(status, result) {
         if (status === "complete" && result.info === "OK") {
           _this.location = result.city;
-          console.log(result);
+         
         }
       });
     });

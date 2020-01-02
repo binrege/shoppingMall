@@ -9,7 +9,7 @@
 
 <script>
 import TopTittle from "../components/common/TopTittle";
-import SideBar from "../components/index/category/SideBar";
+import SideBar from "../components/category/SideBar";
 export default {
   name: "",
   data() {

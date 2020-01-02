@@ -16,6 +16,14 @@ export default {
             verify,
         })
     },
+    //login
+    login({ nickname, password, verify }) {
+        return service.req('/login', {
+            nickname,
+            password,
+            verify
+        })
+    },
     //购物车
     getCar() {
         return service.req("/getCard", {})
@@ -24,5 +32,11 @@ export default {
     getClassification({ mallSubId }) {
         return service.req(`/classification?mallSubId=${mallSubId}`)
     },
+    // getClassification({ mallSubId }) {
+    //     console.log(mallSubId);
+    //     return service.req("/classification", {
+    //         mallSubId
+    //     })
+    // },
 
 }
