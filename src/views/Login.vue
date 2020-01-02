@@ -1,5 +1,6 @@
 <template>
   <div class="login">
+    <backBtn></backBtn>
     <div class="container">
       <div>登录/注册</div>
       <van-cell-group>
@@ -26,6 +27,7 @@
 </template>
 
 <script>
+import backBtn from "../components/common/backBtn";
 export default {
   name: "",
   data() {
@@ -39,7 +41,7 @@ export default {
     };
   },
   props: {},
-  components: {},
+  components: { backBtn },
   methods: {
     getVerify() {
       this.$api
@@ -97,10 +99,11 @@ export default {
           } else if (res.code === -1) {
             this.$notify({ type: "warning", message: "用户已存在,请登录!" });
           } else {
-            localStorage.setItem("userInfo", res.userInfo);
-            localStorage.setItem("user", [1, 2]);
+            // localStorage.setItem("userInfo", res.userInfo);
+            localStorage.setItem("currentUser", JSON.stringify(res.userInfo));
             this.$store.state.user.push(res.userInfo);
-            this.$notify({ type: "success", message: "注册成功!" });
+            this.$store.state.currentUser = res.userInfo;
+            this.$notify({ type: "success", message: "注册成功!"});
             this.$router.push("/");
           }
         })
@@ -119,9 +122,10 @@ export default {
           } else if (res.code === -1) {
             this.$notify({ type: "warning", message: "用户名或密码错误!" });
           } else {
-            localStorage.setItem("userInfo", res.userInfo);
-            localStorage.setItem("user", [1, 2]);
+            // localStorage.setItem("userInfo", res.userInfo);
+            localStorage.setItem("currentUser", JSON.stringify(res.userInfo));
             this.$store.state.user.push(res.userInfo);
+            this.$store.state.currentUser = res.userInfo;
             this.$notify({ type: "success", message: "登录成功!" });
             this.$router.push("/");
           }
@@ -146,6 +150,7 @@ export default {
   background-size: cover;
   height: 100vh;
 }
+
 .container {
   height: 50vh;
   width: 91vw;

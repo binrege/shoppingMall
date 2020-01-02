@@ -38,5 +38,8 @@ export default {
     //         mallSubId
     //     })
     // },
-
+    //商品详情
+    goodOne(id, page = 1) {
+        return service.req(`/goods/one?id=${id}&page=${page}`)
+    }
 }

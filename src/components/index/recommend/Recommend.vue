@@ -23,7 +23,7 @@
     </div> -->
      <scroll class="wrapper" :data="recomend" :scrollX="true">
       <div ref="content" class="content">
-        <div class="recommend" ref="itemWidth" v-for="(item,index) in recomend" :key="index">
+        <div class="recommend" @click="todetails(item.goodsId)" ref="itemWidth" v-for="(item,index) in recomend" :key="index">
           <div>
             <img :src="item.image" alt />
           </div>
@@ -62,7 +62,9 @@ export default {
   components: {scroll},
 
   methods: {
-   
+   todetails(goodsId){
+     this.$router.push({path:"/details",query:{goodsId}})
+   }
     
   },
   updated() {

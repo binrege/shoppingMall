@@ -1,9 +1,14 @@
 <template>
  <div class="home">
     <TopTittle>会员中心</TopTittle>
-    <div class="my">
+    <div v-if="userInfo===null" class="my">
       <div class="logo"><img :src="images" alt=""></div>
       <div @click="toLogin">登录/注册</div>
+    </div>
+     <div v-else class="my">
+      <div class="logo"><img :src="userInfo.avatar" alt=""></div>
+    
+      <div @click="toLogin">欢迎您 {{userInfo.nickname}}</div>
     </div>
     <div class="menu1">
       <div class="temp">
@@ -67,7 +72,9 @@ import TopTittle from "../components/common/TopTittle";
 name:'',
    data () {
      return {
-        images:require("../assets/images/defaultIcon.svg")
+        images:require("../assets/images/defaultIcon.svg"),
+        isLogin:false,
+        userInfo:{},
      }
    },
    props: {
@@ -82,7 +89,14 @@ TopTittle,
       }
    },
    mounted() {
-
+     console.log(this.$store.state.currentUser);
+    
+     console.log(JSON.parse(localStorage.getItem("currentUser")));
+     if(this.$store.state.currentUser&&JSON.parse(localStorage.getItem("currentUser")) ? true:false){
+         this.userInfo=this.$store.state.currentUser
+     }
+      this.userInfo=JSON.parse(localStorage.getItem("currentUser"))
+     console.log(this.userInfo);
    },
    watch: {
 
@@ -99,6 +113,7 @@ TopTittle,
 }
 img{
   width: 17.333vw;
+  border-radius: 50%;
 }
 .my{
   display: flex;
