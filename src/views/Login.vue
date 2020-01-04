@@ -122,6 +122,7 @@ export default {
           } else if (res.code === -1) {
             this.$notify({ type: "warning", message: "用户名或密码错误!" });
           } else {
+            console.log(res);
             // localStorage.setItem("userInfo", res.userInfo);
             localStorage.setItem("currentUser", JSON.stringify(res.userInfo));
             this.$store.state.user.push(res.userInfo);

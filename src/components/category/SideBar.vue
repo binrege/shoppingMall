@@ -9,11 +9,11 @@
         />
       </van-sidebar>
     </div>
-    <van-tabs :active="active" :ellipsis="false" @click="getClassification">
+    <van-tabs :active="active" :ellipsis="false" @change="getClassification" swipeable>
       <scroll class="wrapper" :scrollY="true">
         <div ref="content" class="content">
           <van-tab v-for="(item,index) in bxMallSubDto" :key="index" :title="item.mallSubName">
-            <div class="items" v-for="(item,index) in classifyList" :key="index">
+            <div class="items" v-for="(item,index) in classifyList" @click="todetails(item.id)" :key="index">
               <div>
                 <img :src="item.image" alt />
               </div>
@@ -49,29 +49,32 @@ export default {
   components: { scroll },
   methods: {
     onChange(index) {
-      if(this.category[index].bxMallSubDto){
+      if (this.category[index].bxMallSubDto) {
         this.bxMallSubDto = this.category[index].bxMallSubDto;
-      this.getData(0);
+        this.getData(0);
       }
-      
     },
     getClassification(name, title) {
+      console.log(name);
       this.getData(name);
     },
-    getData(name) { 
-      this.active=name
+    getData(name) {
+      this.active = name;
       this.$api
         .getClassification({
           mallSubId: this.category[this.activeKey].bxMallSubDto[name].mallSubId
         })
         .then(res => {
-          // console.log(res);
+          console.log(res);
           this.classifyList = res.dataList;
         })
         .catch(err => {
           console.log(err);
         });
-    }
+    },
+    todetails(goodsId){
+     this.$router.push({path:"/details",query:{goodsId}})
+   }
   },
   mounted() {
     if (this.$route.query.id) {

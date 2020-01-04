@@ -1,6 +1,6 @@
 <template>
  <div class="TopTittle">
-   <div class="container">
+   <div class="containers">
      <div class="back">
         <div v-if="isBack" class="iconfont iconarrow-left1" @click="back"></div>
      </div>
@@ -22,14 +22,24 @@ name:'',
       isBack:{
         type:Boolean,
         default:false
-      }
+      },
+      
    },
    components: {
 
    },
    methods: {
      back(){
-       this.$router.history.go(-1)
+       if(this.$route.name==="my")
+       {
+         this.$emit("update",false)
+       }else{
+            this.$router.history.go(-1)
+       }
+       
+
+    
+       
      }
    },
    mounted() {
@@ -47,8 +57,10 @@ name:'',
 <style scoped lang='scss'>
 .TopTittle{
   height:5vh;
+  z-index: 9999;
 }
-.container{
+.containers{
+  width: 100vw;
   background: white;
   font-size: 5.267vw;
   display: flex;
@@ -56,7 +68,7 @@ name:'',
  align-items: center;
 
 }
-.container>div{
+.containers>div{
   flex: 1;
 }
 .back>div{

@@ -6,6 +6,7 @@
     <scroll
       class="wrapper"
       :data="recomend.hotGoods"
+      :click="false"
       :scrollY="true"
     >
       <div v-if="recomend" ref="content" class="content">

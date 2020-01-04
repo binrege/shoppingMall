@@ -3,7 +3,7 @@
     <div>热销商品</div>
     <div class="hotGood" ref="hotGood">
        <div class="items" ref="items">
-      <div v-for="(item,index) in hotGoods" :key="index">
+      <div v-for="(item,index) in hotGoods" @click="todetails(item.goodsId)" :key="index">
         <div>
           <img :src="item.image" alt />
         </div>
@@ -56,7 +56,10 @@ export default {
           this.scroll.refresh();
         }
       });
-    }
+    },
+    todetails(goodsId){
+     this.$router.push({path:"/details",query:{goodsId}})
+   }
   },
   updated() {
     // this.$nextTick(() => {

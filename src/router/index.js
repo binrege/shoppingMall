@@ -66,6 +66,24 @@ const routes = [{
         component: () =>
             import ('../views/Details.vue')
     },
+    {
+        path: '/order',
+        name: 'order',
+        component: () =>
+            import ('../views/Order.vue')
+    },
+    {
+        path: '/collection',
+        name: 'collection',
+        component: () =>
+            import ('../views/Collection.vue')
+    },
+    {
+        path: '/address',
+        name: 'address',
+        component: () =>
+            import ('../views/Address.vue')
+    },
 ]
 
 const isPro = process.env.NODE_ENV === 'production'

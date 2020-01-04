@@ -21,14 +21,14 @@
         </div>
       </div>
     </div> -->
-     <scroll class="wrapper" :data="recomend" :scrollX="true">
+     <scroll class="wrapper" :data="recomend" :click="false" :scrollX="true">
       <div ref="content" class="content">
-        <div class="recommend" @click="todetails(item.goodsId)" ref="itemWidth" v-for="(item,index) in recomend" :key="index">
+        <div class="recommend"  ref="itemWidth" v-for="(item,index) in recomend" :key="index">
           <div>
-            <img :src="item.image" alt />
+            <img @click="todetails(item.goodsId)" :src="item.image" alt />
           </div>
-          <div class="goodsName">{{item.goodsName}}</div>
-          <div class="price">
+          <div class="goodsName" @click="todetails(item.goodsId)">{{item.goodsName}}</div>
+          <div class="price" @click="todetails(item.goodsId)">
             ￥{{item.mallPrice}}
             <span>￥{{item.price}}</span>
           </div>
@@ -36,7 +36,7 @@
             <div>
               <van-icon name="cart" size="20" color="white" />
             </div>
-            <div>查看详情</div>
+            <div @click="todetails(item.goodsId)">查看详情</div>
           </div>
         </div>
       </div>

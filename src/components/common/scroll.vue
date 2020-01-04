@@ -89,26 +89,27 @@ export default {
         return;
       }
       // better-scroll的初始化
-    if(this.scrollX){
-       this.scroll = new BScroll(this.$refs.wrapper, {
-        probeType: this.probeType,
-        click: this.click,
-        scrollX: this.scrollX,
-        scrollY: false,
-        eventPassthrough: "vertical"
-      });
-    }
-  
-     if(this.scrollY){
+      if (this.scrollX) {
         this.scroll = new BScroll(this.$refs.wrapper, {
-        probeType: this.probeType,
-        click: this.click,
-        scrollX: false,
-        scrollY: this.scrollY,
-        eventPassthrough: "horizontal"
-      });
-     }
-     
+          probeType: this.probeType,
+          click: this.click,
+          scrollX: this.scrollX,
+          scrollY: false,
+          tap: true,
+          eventPassthrough: "vertical"
+        });
+      }
+
+      if (this.scrollY) {
+        this.scroll = new BScroll(this.$refs.wrapper, {
+          probeType: this.probeType,
+          click: this.click,
+          scrollX: false,
+          tap: true,
+          scrollY: this.scrollY,
+          eventPassthrough: "horizontal"
+        });
+      }
 
       // 是否派发滚动事件
       if (this.listenScroll) {
@@ -129,7 +130,7 @@ export default {
       }
 
       // 是否派发顶部下拉事件，用于下拉刷新
-  
+
       if (this.pulldown) {
         this.scroll.on("touchend", pos => {
           // 下拉动作
@@ -171,17 +172,17 @@ export default {
     // 保证在DOM渲染完毕后初始化better-scroll
     setTimeout(() => {
       this._initScroll();
-    }, 20);
+    }, 1000);
   },
   beforeUpdate() {
-
+    // setTimeout(() => {
+    //   this._initScroll();
+    // }, 30);
   },
   updated() {
-   
-    setTimeout(() => {
-      
-      this._initScroll();
-    }, 20);
+    // setTimeout(() => {
+    //   this._initScroll();
+    // }, 30);
   },
   watch: {
     // 监听数据的变化，延时refreshDelay时间后调用refresh方法重新计算，保证滚动效果正常
@@ -196,7 +197,7 @@ export default {
 </script>
 
 <style scoped lang='scss'>
-.wrapper{
+.wrapper {
   overflow: hidden;
 }
 </style>

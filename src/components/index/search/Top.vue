@@ -4,9 +4,7 @@
       <div>{{location}}</div>
       <div class="iconfont icon-arrow-down"></div>
     </div>
-    <div v-else  class="location">
-        定位中...
-    </div>
+    <div v-else class="location">定位中...</div>
     <div class="inputs">
       <form action="/">
         <van-search v-model="value" placeholder="请输入搜索关键词" @search="onSearch" @cancel="onCancel" />
@@ -21,7 +19,7 @@ export default {
   data() {
     return {
       location: null,
-      value:null,
+      value: null
     };
   },
   props: {},
@@ -29,8 +27,8 @@ export default {
   methods: {
     onSearch() {},
     onCancel() {},
-    locations(){
-      
+    locations() {
+      this.$router.push("/city");
     }
   },
   mounted() {
@@ -39,8 +37,12 @@ export default {
       var citySearch = new AMap.CitySearch();
       citySearch.getLocalCity(function(status, result) {
         if (status === "complete" && result.info === "OK") {
-          _this.location = result.city;
-         
+          if (localStorage.getItem("location")) {
+            _this.location = localStorage.getItem("location");
+          } else {
+            localStorage.setItem("location", result.city);
+            _this.location = localStorage.getItem("location");
+          }
         }
       });
     });
@@ -51,8 +53,8 @@ export default {
 </script>
 
 <style scoped lang='scss'>
-.Indextop{
-  width:100%;
+.Indextop {
+  width: 100%;
   position: fixed;
   top: 0;
   left: 0;
@@ -61,20 +63,25 @@ export default {
   align-items: center;
   font-size: 14px;
   z-index: 999;
-background: rgb(240, 230, 230);
-  .location{
+  background: rgb(240, 230, 230);
+  .location {
     height: 40px;
     width: 70px;
     display: flex;
-    justify-content:center;
+    justify-content: center;
     align-items: center;
     background: rgb(240, 230, 230);
+    >div:first-child{
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
   }
 }
- /deep/ .van-search{
-   padding: 0;
- }
- .inputs{
-   flex: 1;
- }
+/deep/ .van-search {
+  padding: 0;
+}
+.inputs {
+  flex: 1;
+}
 </style>

@@ -6,7 +6,7 @@
     </div>
     <div class="aaa">
       <div class="floor" v-for="(item,index) in floor" :key="index">
-        <img :src="item.image" alt />
+        <img @click="todetails(item.goodsId)" :src="item.image" alt />
       </div>
     </div>
   </div>
@@ -33,7 +33,11 @@ export default {
     }
   },
   components: {},
-  methods: {},
+  methods: {
+       todetails(goodsId){
+     this.$router.push({path:"/details",query:{goodsId}})
+   }
+  },
   mounted() {},
   watch: {},
   computed: {}

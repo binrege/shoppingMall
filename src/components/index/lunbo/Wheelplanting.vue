@@ -2,7 +2,7 @@
   <div class="lunbo">
     <van-swipe :autoplay="3000">
       <van-swipe-item v-for="(item,index) in slides" :key="index">
-        <img :src="item.image" />
+        <img @click="todetails(item.goodsId)" :src="item.image" />
       </van-swipe-item>
     </van-swipe>
    
@@ -25,7 +25,11 @@ export default {
     }
   },
   components: {},
-  methods: {},
+  methods: {
+       todetails(goodsId){
+     this.$router.push({path:"/details",query:{goodsId}})
+   }
+  },
   mounted() {},
   watch: {},
   computed: {}
