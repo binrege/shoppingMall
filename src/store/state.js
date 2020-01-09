@@ -1,7 +1,13 @@
 export default {
     num: 0,
     citys: [],
-    category: [],
+    category: [
+
+    ],
+    searchkey: "",
     user: [],
-    currentUser: {}
+    currentUser: {},
+    UserInfo: [],
+    searchList: [],
+    showSearch: false,
 }

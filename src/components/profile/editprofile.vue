@@ -1,6 +1,6 @@
 <template>
   <div class="editInfo">
-    <van-popup v-model="show" position="right" :style="{ height: '100%',width:'100%'}">
+    <van-popup v-model="show" position="right" :duration="3" :style="{ height: '100%',width:'100%'}">
       <div>
         <div>
           <TopTittle :isBack="true" @update="update">个人资料</TopTittle>
@@ -96,24 +96,25 @@ export default {
       this.$emit("update:show", data);
     },
     getdata() {
-      console.log(JSON.parse(localStorage.getItem("currentUser")));
-      this.userInfo = JSON.parse(localStorage.getItem("currentUser"));
-      this.username = this.userInfo.username;
-      this.avatar = this.userInfo.avatar;
-      this.nickname = this.userInfo.nickname;
-      this.gender = this.userInfo.gender;
-
-      // this.$api.user().then(res=>{
-      //   console.log(res);
-      // }).catch(err=>{
-      //   console.log(err);
-      // })
+      this.$api
+        .user({})
+        .then(res => {
+          console.log(res);
+          this.userInfo = res.userInfo;
+          this.username = this.userInfo.username;
+          this.avatar = this.userInfo.avatar;
+          this.nickname = this.userInfo.nickname;
+          this.gender = this.userInfo.gender;
+        })
+        .catch(err => {
+          console.log(err);
+        });
     },
     //gender,email,year,month,day,id,nickname,avatar
     saveUser() {
       this.$api
         .saveUser({
-          id:"5e0efe11b4e2a71fd4d0c320",
+          id: "5e0efe11b4e2a71fd4d0c320",
           gender: this.gender,
           email: this.email,
           year: "2019",

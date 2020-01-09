@@ -111,6 +111,32 @@ export default {
     },
     collect() {
       this.iscollect = !this.iscollect;
+      if (this.iscollect) {
+        if (localStorage.getItem("currentUser")) {
+          this.$api
+            .collection(this.goods)
+            .then(res => {
+              console.log(res);
+            })
+            .catch(err => {
+              console.log(err);
+            });
+     
+          this.$toast("收藏成功");
+        } else {
+          //未登录
+          this.$router.push("/login");
+        }
+      }else{//取消收藏
+          this.$api
+            .cancelCollection(this.goods.id)
+            .then(res => {
+              console.log(res);
+            })
+            .catch(err => {
+              console.log(err);
+            });
+      }
     }
   },
   mounted() {

@@ -1,10 +1,15 @@
 <template>
   <div class="details">
     <TopTittle>购物车</TopTittle>
-    <div class="nologin">
+    <div v-if="states===1" class="nologin">
       <div class="shopicon"></div>
       <div>请先登录哦...</div>
-      <div class="tologin" @click="toLogin">去登录</div>
+      <div class="tologin" @click="toLogin('/login')">去登录</div>
+    </div>
+     <div v-if="states===2" class="nologin">
+      <div class="shopicon"></div>
+      <div>您的购物车还是空空的哦哦...</div>
+      <div class="tologin" @click="toLogin('/')">去购物</div>
     </div>
   </div>
 </template>
@@ -14,18 +19,30 @@ import TopTittle from "../components/common/TopTittle";
 export default {
   name: "",
   data() {
-    return {};
+    return {
+      //1代表未登录  2代表已登录, 3代表购物车有数据
+        states:1,
+    };
   },
   props: {},
   components: {
     TopTittle
   },
   methods: {
-    toLogin() {
-      this.$router.push("/login");
+    toLogin(path) {
+      this.$router.push(path);
     }
   },
-  mounted() {},
+  mounted() {
+    if(localStorage.getItem("currentUser")){
+      this.states=2
+
+
+    }else{
+      this.states=1
+    }
+
+  },
   watch: {},
   computed: {}
 };

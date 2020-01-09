@@ -1,7 +1,7 @@
 <template>
  <div>
   <div>
-      <TopTittle :isBack="true">地址列表</TopTittle>
+      <TopTittle :isBack="true">最近浏览</TopTittle>
     
     </div>
  </div>

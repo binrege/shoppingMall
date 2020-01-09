@@ -99,11 +99,42 @@ export default {
           } else if (res.code === -1) {
             this.$notify({ type: "warning", message: "用户已存在,请登录!" });
           } else {
-            // localStorage.setItem("userInfo", res.userInfo);
-            localStorage.setItem("currentUser", JSON.stringify(res.userInfo));
-            this.$store.state.user.push(res.userInfo);
+            //将登录用户存到vuex
             this.$store.state.currentUser = res.userInfo;
-            this.$notify({ type: "success", message: "注册成功!"});
+            //将当前登录用户保存到本地
+            localStorage.setItem(
+              "currentUser",
+              JSON.stringify({
+                user: res.userInfo,
+                searchHistory: []
+              })
+            );
+            //获取userInfo
+            let userArr = JSON.parse(localStorage.getItem("userInfo"));
+            console.log(111);
+            console.log(userArr);
+            if (userArr) {
+              let uses = JSON.parse(localStorage.getItem("currentUser"));
+              userArr.map(item => {
+                if (item.user.nickname !== users.nickname) {
+                  userArr.push(JSON.parse(localStorage.getItem("currentUser")));
+                }
+              });
+              // 将当前登录用户存到用户数组
+              localStorage.setItem("userInfo", JSON.stringify(userArr));
+            } else {
+              localStorage.setItem(
+                "userInfo",
+                JSON.stringify([
+                  {
+                    user: res.userInfo,
+                    searchHistory: []
+                  }
+                ])
+              );
+            }
+
+            this.$notify({ type: "success", message: "登录成功!" });
             this.$router.push("/");
           }
         })
@@ -119,14 +150,57 @@ export default {
         .then(res => {
           if (res.code === -2) {
             this.$notify({ type: "warning", message: "验证码错误!" });
+            this.getVerify();
           } else if (res.code === -1) {
             this.$notify({ type: "warning", message: "用户名或密码错误!" });
+            this.getVerify();
           } else {
             console.log(res);
-            // localStorage.setItem("userInfo", res.userInfo);
-            localStorage.setItem("currentUser", JSON.stringify(res.userInfo));
-            this.$store.state.user.push(res.userInfo);
+            //将登录用户存到vuex
             this.$store.state.currentUser = res.userInfo;
+
+        
+
+
+            //将当前登录用户保存到本地
+            localStorage.setItem(
+              "currentUser",
+              JSON.stringify({
+                user: res.userInfo,
+                searchHistory: []
+              })
+            );
+            //获取userInfo
+            let userArr = JSON.parse(localStorage.getItem("userInfo"));
+            let uses = JSON.parse(localStorage.getItem("currentUser"));
+            console.log(111);
+            console.log(userArr);                                 
+            console.log(uses);    
+
+            if (userArr) {
+              console.log("2222");
+              userArr.map(item => {
+                if (item.user.nickname !== uses.nickname) {
+                  uses = item;
+                  userArr.push(JSON.parse(localStorage.getItem("currentUser")));
+                }
+              });
+              // 将当前登录用户存到用户数组
+              localStorage.setItem("currentUser", JSON.stringify(uses));
+              localStorage.setItem("userInfo", JSON.stringify(userArr));
+            } else {
+              console.log("3333");
+              localStorage.setItem(
+                "userInfo",
+                JSON.stringify([
+                  {
+                    user: res.userInfo,
+                    searchHistory: []
+                  }
+                ])
+              );
+            }
+
             this.$notify({ type: "success", message: "登录成功!" });
             this.$router.push("/");
           }

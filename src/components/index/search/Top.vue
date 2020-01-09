@@ -7,7 +7,7 @@
     <div v-else class="location">定位中...</div>
     <div class="inputs">
       <form action="/">
-        <van-search v-model="value" placeholder="请输入搜索关键词" @search="onSearch" @cancel="onCancel" />
+        <van-search v-model="$store.state.searchkey" @input="changeValue"  placeholder="请输入搜索关键词" @focus="searchGoods" :show-action="show" @search="onSearch" @cancel="onCancel" />
       </form>
     </div>
   </div>
@@ -19,16 +19,50 @@ export default {
   data() {
     return {
       location: null,
-      value: null
+      value: "",
+      show:false,
     };
   },
-  props: {},
+  props: {
+    values:{
+      type:String,
+      default:""
+    },
+    showPop:{
+      type:Boolean,
+      default:false
+    }
+  },
   components: {},
+
   methods: {
-    onSearch() {},
-    onCancel() {},
+    onSearch() {
+    
+    },
+    onCancel() {
+     this.$store.state.showSearch=false
+      this.show=false
+      this.$parent.showPop=false
+      this.$store.state.searchkey=""
+
+    },
     locations() {
       this.$router.push("/city");
+    },
+    //@focus="searchGoods"
+    searchGoods(){
+      this.$parent.showPop=true
+      this.show=true
+     this.$store.state.showSearch=true
+    //  this.$store.state.searchkey=""
+
+    },
+    //@input="changeValue"
+    changeValue(){
+   
+        console.log(this.$store.state.searchkey);
+
+     
     }
   },
   mounted() {
@@ -47,7 +81,11 @@ export default {
       });
     });
   },
-  watch: {},
+  watch: {
+    value(val){
+      this.$emit("changeshow",{show:this.show,value:val})
+    }
+  },
   computed: {}
 };
 </script>
@@ -83,5 +121,8 @@ export default {
 }
 .inputs {
   flex: 1;
+}
+.van-search__action{
+    background: rgb(240, 230, 230);
 }
 </style>

@@ -25,7 +25,11 @@ export default {
     TopTittle
   },
   methods: {},
-  mounted() {},
+  mounted() {
+    if(this.$route.query.active){
+      this.active=this.$route.query.active
+    }
+  },
   watch: {},
   computed: {}
 };

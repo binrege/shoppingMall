@@ -84,6 +84,12 @@ const routes = [{
         component: () =>
             import ('../views/Address.vue')
     },
+    {
+        path: '/browse',
+        name: 'browse',
+        component: () =>
+            import ('../views/Browse.vue')
+    },
 ]
 
 const isPro = process.env.NODE_ENV === 'production'

@@ -13,18 +13,30 @@
       <scroll class="wrapper" :scrollY="true">
         <div ref="content" class="content">
           <van-tab v-for="(item,index) in bxMallSubDto" :key="index" :title="item.mallSubName">
-            <div class="items" v-for="(item,index) in classifyList" @click="todetails(item.id)" :key="index">
-              <div>
-                <img :src="item.image" alt />
-              </div>
-              <div class="rightcontant">
-                <div class="goodName">{{item.name}}</div>
-                <div class="price">
-                  ￥{{item.present_price}}
-                  <span>￥{{item.orl_price}}</span>
+            <van-pull-refresh
+              v-model="isLoading"
+              loading-text="正在刷新..."
+              success-text="刷新成功"
+              @refresh="onRefresh"
+            >
+              <div
+                class="items"
+                v-for="(item,index) in classifyList"
+                @click="todetails(item.id)"
+                :key="index"
+              >
+                <div>
+                  <img :src="item.image" alt />
+                </div>
+                <div class="rightcontant">
+                  <div class="goodName">{{item.name}}</div>
+                  <div class="price">
+                    ￥{{item.present_price}}
+                    <span>￥{{item.orl_price}}</span>
+                  </div>
                 </div>
               </div>
-            </div>
+            </van-pull-refresh>
           </van-tab>
         </div>
       </scroll>
@@ -42,7 +54,9 @@ export default {
       category: [],
       bxMallSubDto: [],
       active: 0,
-      classifyList: []
+      classifyList: [],
+      count: 0,
+      isLoading: true
     };
   },
   props: {},
@@ -72,9 +86,16 @@ export default {
           console.log(err);
         });
     },
-    todetails(goodsId){
-     this.$router.push({path:"/details",query:{goodsId}})
-   }
+    todetails(goodsId) {
+      this.$router.push({ path: "/details", query: { goodsId } });
+    },
+    onRefresh() {
+      setTimeout(() => {
+        // this.$toast('刷新成功');
+        this.isLoading = false;
+        this.count++;
+      }, 500);
+    }
   },
   mounted() {
     if (this.$route.query.id) {

@@ -9,7 +9,7 @@
     <!-- <scroll class="wrapper"   :scrollY="true">
       <div ref="content" class="content"> -->
         <div v-if="isSearch===1" class="bottoms">
-          <van-index-bar :sticky-offset-top="100" highlight-color="red" :index-list="letters">
+          <van-index-bar  highlight-color="red" :index-list="letters">
             <div class="currentCity">
               <div>当前城市</div>
               <div class="cities">
@@ -95,6 +95,7 @@ export default {
     },
     setLocation(location){
       localStorage.setItem("location",location)
+      
       this.$router.push("/")
     },
     searchLists(){
@@ -154,7 +155,7 @@ export default {
   left: 0;
   top: 0;
   z-index: 999;
-  height: 15vh;
+  height: 12vh;
   background: white;
 }
 /deep/ .van-index-bar__sidebar {
@@ -214,5 +215,8 @@ export default {
   font-size: 14px;
   line-height: 10.333vw;
   padding-left: 10px;
+}
+/deep/ .van-index-anchor--sticky{
+  top: 12vh;
 }
 </style>

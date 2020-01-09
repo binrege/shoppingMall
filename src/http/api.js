@@ -50,8 +50,8 @@ export default {
         })
     },
     //用户相关接口
-    user() {
-        return service.req(`/queryUser`)
+    user({}) {
+        return service.req(`/queryUser`, {})
     },
 
     saveUser({...args }) {
@@ -65,6 +65,50 @@ export default {
 
     comment({...args }) {
         return service.req(`/goodsOne/comment`, args)
+    },
+    //收藏商品
+    collection(goods) {
+        return service.req('/collection', goods)
+    },
+    //取消收藏
+    cancelCollection(id) {
+        return service.req('/cancelCollection', { id })
+    },
+    //判断是否收藏
+    isCollection(id) {
+        return service.req(`/isCollection`, { id })
+    },
+
+    addShop(id) {
+        return service.req(`/addShop`, { id })
+    },
+    //搜索商品
+    search(value, page = 1) {
+        return service.req('/search', {
+            value,
+            page
+        })
+    },
+    /**
+     * 购物车(ShoppingCart)所有接口
+     * getCard      查询获取购物车数据
+     * editCart     购物车加减商品      参数 ： 数量  商品id 价格
+     * deleteShop   购物车商品删除      参数 id：需要删除的商品cid
+     */
+    getCard() {
+        return service.req(`/getCard`)
+    },
+
+    editCart(count, id, mallPrice) {
+        return service.req('/editCart', {
+            count,
+            id,
+            mallPrice
+        })
+    },
+
+    deleteShop(id) {
+        return service.req('/deleteShop', id)
     },
 
 }

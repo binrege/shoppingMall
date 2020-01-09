@@ -56,6 +56,9 @@ name:'',
 
 <style scoped lang='scss'>
 .TopTittle{
+  position: fixed;
+  top: 0;
+  left: 0;
   height:5vh;
   z-index: 9999;
 }
