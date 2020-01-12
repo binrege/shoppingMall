@@ -1,5 +1,5 @@
 <template>
-  <div ref="wrapper">
+  <div :ref="wrapper">
     <slot></slot>
   </div>
 </template>
@@ -12,6 +12,10 @@ export default {
     return {};
   },
   props: {
+    wrapper:{
+      type:String,
+      default:"wrapper"
+    },
     /**
      * 1 滚动的时候会派发scroll事件，会截流。
      * 2 滚动的时候实时派发scroll事件，不会截流。
@@ -90,7 +94,7 @@ export default {
       }
       // better-scroll的初始化
       if (this.scrollX) {
-        this.scroll = new BScroll(this.$refs.wrapper, {
+        this.scroll = new BScroll(this.$refs[this.wrapper], {
           probeType: this.probeType,
           click: this.click,
           scrollX: this.scrollX,
@@ -99,9 +103,9 @@ export default {
           eventPassthrough: "vertical"
         });
       }
-
+      console.log(this.scrollY);
       if (this.scrollY) {
-        this.scroll = new BScroll(this.$refs.wrapper, {
+        this.scroll = new BScroll(this.$refs[this.wrapper], {
           probeType: this.probeType,
           click: this.click,
           scrollX: false,
@@ -173,6 +177,7 @@ export default {
     setTimeout(() => {
       this._initScroll();
     }, 1000);
+
   },
   beforeUpdate() {
     // setTimeout(() => {
@@ -180,9 +185,10 @@ export default {
     // }, 30);
   },
   updated() {
-    // setTimeout(() => {
-    //   this._initScroll();
-    // }, 30);
+
+    setTimeout(() => {
+      this._initScroll();
+    }, 300);
   },
   watch: {
     // 监听数据的变化，延时refreshDelay时间后调用refresh方法重新计算，保证滚动效果正常

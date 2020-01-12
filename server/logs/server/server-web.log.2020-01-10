@@ -1,0 +1,50 @@
+2020-01-10 08:37:40,220 ERROR 2148 [-/127.0.0.1/-/5ms POST /v1/deleteShop] nodejs.CastError: Cast to string failed for value "{ '0': 'a632bfb3818541da8e6843d6d0dbd917' }" at path "cid" for model "ShopList"
+    at new CastError (C:\Users\leibin\Desktop\program\programs\shoppingMall\server\node_modules\_mongoose@5.8.4@mongoose\lib\error\cast.js:39:11)
+    at SchemaString.cast (C:\Users\leibin\Desktop\program\programs\shoppingMall\server\node_modules\_mongoose@5.8.4@mongoose\lib\schema\string.js:583:11)
+    at SchemaString.SchemaType.applySetters (C:\Users\leibin\Desktop\program\programs\shoppingMall\server\node_modules\_mongoose@5.8.4@mongoose\lib\schematype.js:975:12)
+    at SchemaString.SchemaType._castForQuery (C:\Users\leibin\Desktop\program\programs\shoppingMall\server\node_modules\_mongoose@5.8.4@mongoose\lib\schematype.js:1389:15)
+    at SchemaString.castForQuery (C:\Users\leibin\Desktop\program\programs\shoppingMall\server\node_modules\_mongoose@5.8.4@mongoose\lib\schema\string.js:645:15)
+    at SchemaString.SchemaType.castForQueryWrapper (C:\Users\leibin\Desktop\program\programs\shoppingMall\server\node_modules\_mongoose@5.8.4@mongoose\lib\schematype.js:1358:15)
+    at cast (C:\Users\leibin\Desktop\program\programs\shoppingMall\server\node_modules\_mongoose@5.8.4@mongoose\lib\cast.js:260:34)
+    at model.Query.Query.cast (C:\Users\leibin\Desktop\program\programs\shoppingMall\server\node_modules\_mongoose@5.8.4@mongoose\lib\query.js:4683:12)
+    at model.Query.Query._castConditions (C:\Users\leibin\Desktop\program\programs\shoppingMall\server\node_modules\_mongoose@5.8.4@mongoose\lib\query.js:1861:10)
+    at model.Query.<anonymous> (C:\Users\leibin\Desktop\program\programs\shoppingMall\server\node_modules\_mongoose@5.8.4@mongoose\lib\query.js:2811:8)
+    at model.Query._wrappedThunk [as _deleteMany] (C:\Users\leibin\Desktop\program\programs\shoppingMall\server\node_modules\_mongoose@5.8.4@mongoose\lib\helpers\query\wrapThunk.js:16:8)
+    at C:\Users\leibin\Desktop\program\programs\shoppingMall\server\node_modules\_kareem@2.3.1@kareem\index.js:369:33
+    at processTicksAndRejections (internal/process/task_queues.js:75:11)
+stringValue: "\"{ '0': 'a632bfb3818541da8e6843d6d0dbd917' }\""
+kind: "string"
+value: {"0":"a632bfb3818541da8e6843d6d0dbd917"}
+path: "cid"
+reason: null
+message: "Cast to string failed for value \"{ '0': 'a632bfb3818541da8e6843d6d0dbd917' }\" at path \"cid\" for model \"ShopList\""
+name: "CastError"
+model: undefined
+pid: 2148
+hostname: leibin
+
+2020-01-10 08:38:18,575 ERROR 2148 [-/127.0.0.1/-/1ms POST /v1/deleteShop] nodejs.CastError: Cast to string failed for value "{ '0': 'a632bfb3818541da8e6843d6d0dbd917' }" at path "cid" for model "ShopList"
+    at new CastError (C:\Users\leibin\Desktop\program\programs\shoppingMall\server\node_modules\_mongoose@5.8.4@mongoose\lib\error\cast.js:39:11)
+    at SchemaString.cast (C:\Users\leibin\Desktop\program\programs\shoppingMall\server\node_modules\_mongoose@5.8.4@mongoose\lib\schema\string.js:583:11)
+    at SchemaString.SchemaType.applySetters (C:\Users\leibin\Desktop\program\programs\shoppingMall\server\node_modules\_mongoose@5.8.4@mongoose\lib\schematype.js:975:12)
+    at SchemaString.SchemaType._castForQuery (C:\Users\leibin\Desktop\program\programs\shoppingMall\server\node_modules\_mongoose@5.8.4@mongoose\lib\schematype.js:1389:15)
+    at SchemaString.castForQuery (C:\Users\leibin\Desktop\program\programs\shoppingMall\server\node_modules\_mongoose@5.8.4@mongoose\lib\schema\string.js:645:15)
+    at SchemaString.SchemaType.castForQueryWrapper (C:\Users\leibin\Desktop\program\programs\shoppingMall\server\node_modules\_mongoose@5.8.4@mongoose\lib\schematype.js:1358:15)
+    at cast (C:\Users\leibin\Desktop\program\programs\shoppingMall\server\node_modules\_mongoose@5.8.4@mongoose\lib\cast.js:260:34)
+    at model.Query.Query.cast (C:\Users\leibin\Desktop\program\programs\shoppingMall\server\node_modules\_mongoose@5.8.4@mongoose\lib\query.js:4683:12)
+    at model.Query.Query._castConditions (C:\Users\leibin\Desktop\program\programs\shoppingMall\server\node_modules\_mongoose@5.8.4@mongoose\lib\query.js:1861:10)
+    at model.Query.<anonymous> (C:\Users\leibin\Desktop\program\programs\shoppingMall\server\node_modules\_mongoose@5.8.4@mongoose\lib\query.js:2811:8)
+    at model.Query._wrappedThunk [as _deleteMany] (C:\Users\leibin\Desktop\program\programs\shoppingMall\server\node_modules\_mongoose@5.8.4@mongoose\lib\helpers\query\wrapThunk.js:16:8)
+    at C:\Users\leibin\Desktop\program\programs\shoppingMall\server\node_modules\_kareem@2.3.1@kareem\index.js:369:33
+    at processTicksAndRejections (internal/process/task_queues.js:75:11)
+stringValue: "\"{ '0': 'a632bfb3818541da8e6843d6d0dbd917' }\""
+kind: "string"
+value: {"0":"a632bfb3818541da8e6843d6d0dbd917"}
+path: "cid"
+reason: null
+message: "Cast to string failed for value \"{ '0': 'a632bfb3818541da8e6843d6d0dbd917' }\" at path \"cid\" for model \"ShopList\""
+name: "CastError"
+model: undefined
+pid: 2148
+hostname: leibin
+

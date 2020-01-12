@@ -42,6 +42,13 @@ name:'',
        
      }
    },
+   beforeRouteLeave (to, from, next) {
+     if(from.name==="shoppingPayMent"){
+       next("/shoppingCar")
+     }else{
+       next()
+     }
+   },
    mounted() {
 
    },
@@ -56,19 +63,21 @@ name:'',
 
 <style scoped lang='scss'>
 .TopTittle{
+  
+  height:5vh;
+  z-index: 9999!important;
+}
+.containers{
   position: fixed;
   top: 0;
   left: 0;
-  height:5vh;
-  z-index: 9999;
-}
-.containers{
   width: 100vw;
   background: white;
   font-size: 5.267vw;
   display: flex;
  height: 5vh;
  align-items: center;
+ z-index: 9999;
 
 }
 .containers>div{

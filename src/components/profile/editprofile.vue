@@ -1,8 +1,8 @@
 <template>
   <div class="editInfo">
-    <van-popup v-model="show" position="right" :duration="3" :style="{ height: '100%',width:'100%'}">
+    <van-popup v-model="show" position="right" :duration="0.5" :style="{ height: '100%',width:'100%'}">
       <div>
-        <div>
+        <div class="indexs">
           <TopTittle :isBack="true" @update="update">个人资料</TopTittle>
         </div>
         <div>
@@ -157,7 +157,7 @@ export default {
 
 <style scoped lang='scss'>
 .editInfo {
-  height: 30vh;
+  height: 15vh;
 }
 /deep/ .containers {
   color: black;
@@ -194,5 +194,8 @@ export default {
 }
 .van-cell {
   border: 1px solid rgba(0, 0, 0, 0.08);
+}
+.van-popup{
+  z-index: 100000!important;
 }
 </style>

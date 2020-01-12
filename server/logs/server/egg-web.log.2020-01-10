@@ -1,0 +1,55 @@
+2020-01-10 00:00:01,029 INFO 15620 [egg-logrotator] app logger reload: got log-reload message
+2020-01-10 08:22:22,751 INFO 2148 [egg:logger] init all loggers with options: {"dir":"C:\\Users\\leibin\\Desktop\\program\\programs\\shoppingMall\\server\\logs\\server","encoding":"utf8","env":"local","level":"INFO","consoleLevel":"INFO","disableConsoleAfterReady":false,"outputJSON":false,"buffer":true,"appLogName":"server-web.log","coreLogName":"egg-web.log","agentLogName":"egg-agent.log","errorLogName":"common-error.log","coreLogger":{"consoleLevel":"WARN"},"allowDebugAtProd":false,"type":"application"}
+2020-01-10 08:22:22,804 INFO 2148 [egg-multipart] stream mode enable
+2020-01-10 08:22:23,766 INFO 2148 [egg-mongoose] connecting mongodb://127.0.0.1/shoppingMall
+2020-01-10 08:22:24,666 INFO 2148 [egg-static] starting static serve /public/ -> C:\Users\leibin\Desktop\program\programs\shoppingMall\server\app\public
+2020-01-10 08:22:24,673 INFO 2148 [egg-security] use methodnoallow middleware
+2020-01-10 08:22:24,675 INFO 2148 [egg-security] use noopen middleware
+2020-01-10 08:22:24,681 INFO 2148 [egg-security] use nosniff middleware
+2020-01-10 08:22:24,683 INFO 2148 [egg-security] use xssProtection middleware
+2020-01-10 08:22:24,684 INFO 2148 [egg-security] use xframe middleware
+2020-01-10 08:22:24,686 INFO 2148 [egg-security] use dta middleware
+2020-01-10 08:22:24,686 INFO 2148 [egg-security] compose 6 middlewares into one security middleware
+2020-01-10 08:22:24,736 INFO 2148 [egg:core] dump config after load, 9ms
+2020-01-10 08:22:24,741 INFO 2148 [egg-mongoose] starting...
+2020-01-10 08:22:24,823 INFO 2148 [egg-mongoose] mongodb://127.0.0.1/shoppingMall connected successfully
+2020-01-10 08:22:24,841 INFO 2148 [egg-mongoose] instance[0] start successfully
+2020-01-10 08:22:24,844 INFO 2148 [egg-watcher:application] watcher start success
+2020-01-10 08:22:24,859 INFO 2148 [egg:core] dump config after ready, 8ms
+2020-01-10 15:23:34,871 INFO 15728 [egg:logger] init all loggers with options: {"dir":"C:\\Users\\leibin\\Desktop\\program\\programs\\shoppingMall\\server\\logs\\server","encoding":"utf8","env":"local","level":"INFO","consoleLevel":"INFO","disableConsoleAfterReady":false,"outputJSON":false,"buffer":true,"appLogName":"server-web.log","coreLogName":"egg-web.log","agentLogName":"egg-agent.log","errorLogName":"common-error.log","coreLogger":{"consoleLevel":"WARN"},"allowDebugAtProd":false,"type":"application"}
+2020-01-10 15:23:34,925 INFO 15728 [egg-multipart] stream mode enable
+2020-01-10 15:23:35,674 INFO 15728 [egg-mongoose] connecting mongodb://127.0.0.1/shoppingMall
+2020-01-10 15:23:36,356 INFO 15728 [egg-static] starting static serve /public/ -> C:\Users\leibin\Desktop\program\programs\shoppingMall\server\app\public
+2020-01-10 15:23:36,362 INFO 15728 [egg-security] use methodnoallow middleware
+2020-01-10 15:23:36,363 INFO 15728 [egg-security] use noopen middleware
+2020-01-10 15:23:36,367 INFO 15728 [egg-security] use nosniff middleware
+2020-01-10 15:23:36,368 INFO 15728 [egg-security] use xssProtection middleware
+2020-01-10 15:23:36,369 INFO 15728 [egg-security] use xframe middleware
+2020-01-10 15:23:36,371 INFO 15728 [egg-security] use dta middleware
+2020-01-10 15:23:36,371 INFO 15728 [egg-security] compose 6 middlewares into one security middleware
+2020-01-10 15:23:36,415 INFO 15728 [egg:core] dump config after load, 7ms
+2020-01-10 15:23:36,421 INFO 15728 [egg-mongoose] starting...
+2020-01-10 15:23:36,500 INFO 15728 [egg-mongoose] mongodb://127.0.0.1/shoppingMall connected successfully
+2020-01-10 15:23:36,511 INFO 15728 [egg-mongoose] instance[0] start successfully
+2020-01-10 15:23:36,515 INFO 15728 [egg-watcher:application] watcher start success
+2020-01-10 15:23:36,528 INFO 15728 [egg:core] dump config after ready, 9ms
+2020-01-10 23:55:47,195 INFO 16108 [egg:logger] init all loggers with options: {"dir":"C:\\Users\\leibin\\Desktop\\program\\programs\\shoppingMall\\server\\logs\\server","encoding":"utf8","env":"local","level":"INFO","consoleLevel":"INFO","disableConsoleAfterReady":false,"outputJSON":false,"buffer":true,"appLogName":"server-web.log","coreLogName":"egg-web.log","agentLogName":"egg-agent.log","errorLogName":"common-error.log","coreLogger":{"consoleLevel":"WARN"},"allowDebugAtProd":false,"type":"application"}
+2020-01-10 23:55:47,243 INFO 16108 [egg-multipart] stream mode enable
+2020-01-10 23:55:48,142 INFO 16108 [egg-mongoose] connecting mongodb://127.0.0.1/shoppingMall
+2020-01-10 23:55:48,945 INFO 16108 [egg-static] starting static serve /public/ -> C:\Users\leibin\Desktop\program\programs\shoppingMall\server\app\public
+2020-01-10 23:55:48,952 INFO 16108 [egg-security] use methodnoallow middleware
+2020-01-10 23:55:48,953 INFO 16108 [egg-security] use noopen middleware
+2020-01-10 23:55:48,957 INFO 16108 [egg-security] use nosniff middleware
+2020-01-10 23:55:48,959 INFO 16108 [egg-security] use xssProtection middleware
+2020-01-10 23:55:48,960 INFO 16108 [egg-security] use xframe middleware
+2020-01-10 23:55:48,961 INFO 16108 [egg-security] use dta middleware
+2020-01-10 23:55:48,961 INFO 16108 [egg-security] compose 6 middlewares into one security middleware
+2020-01-10 23:55:49,008 INFO 16108 [egg:core] dump config after load, 7ms
+2020-01-10 23:55:49,013 INFO 16108 [egg-mongoose] starting...
+2020-01-10 23:55:49,092 INFO 16108 [egg-mongoose] mongodb://127.0.0.1/shoppingMall connected successfully
+2020-01-10 23:55:49,106 INFO 16108 [egg-mongoose] instance[0] start successfully
+2020-01-10 23:55:49,110 INFO 16108 [egg-watcher:application] watcher start success
+2020-01-10 23:55:49,126 INFO 16108 [egg:core] dump config after ready, 11ms
+2020-01-11 00:00:00,011 INFO 16108 [egg-logrotator] clean all log before 31 days
+2020-01-11 00:00:01,018 INFO 16108 [egg-logrotator] broadcast log-reload
+2020-01-11 00:00:01,018 INFO 16108 [egg-logrotator] rotate files success by DayRotator, files ["C:\\Users\\leibin\\Desktop\\program\\programs\\shoppingMall\\server\\logs\\server\\common-error.log -> C:\\Users\\leibin\\Desktop\\program\\programs\\shoppingMall\\server\\logs\\server\\common-error.log.2020-01-10","C:\\Users\\leibin\\Desktop\\program\\programs\\shoppingMall\\server\\logs\\server\\server-web.log -> C:\\Users\\leibin\\Desktop\\program\\programs\\shoppingMall\\server\\logs\\server\\server-web.log.2020-01-10","C:\\Users\\leibin\\Desktop\\program\\programs\\shoppingMall\\server\\logs\\server\\egg-web.log -> C:\\Users\\leibin\\Desktop\\program\\programs\\shoppingMall\\server\\logs\\server\\egg-web.log.2020-01-10","C:\\Users\\leibin\\Desktop\\program\\programs\\shoppingMall\\server\\logs\\server\\egg-schedule.log -> C:\\Users\\leibin\\Desktop\\program\\programs\\shoppingMall\\server\\logs\\server\\egg-schedule.log.2020-01-10","C:\\Users\\leibin\\Desktop\\program\\programs\\shoppingMall\\server\\logs\\server\\egg-agent.log -> C:\\Users\\leibin\\Desktop\\program\\programs\\shoppingMall\\server\\logs\\server\\egg-agent.log.2020-01-10"]

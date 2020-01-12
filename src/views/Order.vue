@@ -3,11 +3,21 @@
     <div>
       <TopTittle :isBack="true">全部订单</TopTittle>
       <van-tabs v-model="active" swipeable :swipe-threshold="5">
-        <van-tab title="全部">全部</van-tab>
-        <van-tab title="待支付">待支付</van-tab>
-        <van-tab title="待发货">待发货</van-tab>
-        <van-tab title="待收货">待收货</van-tab>
-        <van-tab title="已完成">已完成</van-tab>
+        <van-tab title="全部">
+          <div class="contatn">此功能尚未开发</div>
+        </van-tab>
+        <van-tab title="待支付">
+           <div class="contatn">此功能尚未开发</div>
+        </van-tab>
+        <van-tab title="待发货">
+           <div class="contatn">此功能尚未开发</div>
+        </van-tab>
+        <van-tab title="待收货">
+           <div class="contatn">此功能尚未开发</div>
+        </van-tab>
+        <van-tab title="已完成">
+           <div class="contatn">开发中</div>
+        </van-tab>
       </van-tabs>
     </div>
   </div>
@@ -36,4 +46,8 @@ export default {
 </script>
 
 <style scoped lang='scss'>
+.contatn{
+  padding: 0 10px;
+  text-align: center;
+}
 </style>

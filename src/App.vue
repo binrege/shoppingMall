@@ -12,4 +12,7 @@
   padding:0;
   margin: 0;
 }
+.van-overflow-hidden{
+  overflow:initial!important;
+}
 </style>

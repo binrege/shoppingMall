@@ -90,6 +90,24 @@ const routes = [{
         component: () =>
             import ('../views/Browse.vue')
     },
+    {
+        path: '/shoppingPayMent',
+        name: 'shoppingPayMent',
+        component: () =>
+            import ('../views/ShoppingPayMent.vue')
+    },
+    {
+        path: '/addressEdit',
+        name: 'addressEdit',
+        component: () =>
+            import ('../views/AddressEdit.vue')
+    },
+    {
+        path: '/evaluate',
+        name: 'evaluate',
+        component: () =>
+            import ('../views/Evaluate.vue')
+    },
 ]
 
 const isPro = process.env.NODE_ENV === 'production'

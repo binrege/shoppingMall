@@ -29,9 +29,10 @@
         <div class="iconfont icondaishouhuo"></div>
         <div>待收货</div>
       </div>
-      <div class="temp" @click="jump()">
+      <div class="temp" @click="jump('/evaluate')">
         <div class="iconfont iconpingjia"></div>
         <div>评价</div>
+        
       </div>
       <div class="temp" @click="jump('/order',4)">
         <div class="iconfont iconshoucang4"></div>
@@ -127,10 +128,12 @@ export default {
 
 <style scoped lang='scss'>
 .home {
+  font-size: 16px;
   background: white;
 }
 .sets {
   position: absolute;
+  font-size: 16px;
   top: 10px;
   right: 10px;
 }

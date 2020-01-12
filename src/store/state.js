@@ -10,4 +10,10 @@ export default {
     UserInfo: [],
     searchList: [],
     showSearch: false,
+    count: null,
+    length: null,
+    address: {},
+    from: "",
+    recentlybrowse: [],
+    shoppingGoodsList: [],
 }

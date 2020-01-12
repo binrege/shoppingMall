@@ -20,7 +20,6 @@
 </template>
 
 <script>
-import BScroll from "better-scroll";
 export default {
   name: "",
   data() {
@@ -34,39 +33,15 @@ export default {
   },
   components: {},
   methods: {
-    personScroll() {
-    
-      // 默认有六个li子元素，每个子元素的宽度为120px
-    //   let height = this.hotGoods.length/2 * 231+600;
-    // console.log(height);
-    //   this.$refs.items.style.height = height + "px";
-      // this.$nextTick 是一个异步函数，为了确保 DOM 已经渲染
-      this.$nextTick(() => {
-        if (!this.scroll) {
-          this.scroll = new BScroll(this.$refs.hotGood, {
-            startX: 0,
-            startY: 0,
-            click: true,
-            scrollX: false,
-            // 忽略竖直方向的滚动
-            scrollY: true,
-            eventPassthrough: "horizontal"
-          });
-        } else {
-          this.scroll.refresh();
-        }
-      });
-    },
     todetails(goodsId){
      this.$router.push({path:"/details",query:{goodsId}})
    }
   },
   updated() {
-    // this.$nextTick(() => {
-    //   this.personScroll();
-    // });
   },
-  mounted() {},
+  mounted() {
+    console.log(this.hotGoods);
+  },
   watch: {},
   computed: {}
 };

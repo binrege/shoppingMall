@@ -4,7 +4,7 @@
       <Top @changeshow="changeshow" :showPop.sync="showPop"></Top>
     </div>
 
-    <scroll class="wrapper" :data="recomend.hotGoods" :click="false" :scrollY="true">
+    <scroll class="wrapper" :click="false" :scrollY="true">
       <div v-if="recomend" ref="content" class="content">
         <van-pull-refresh
           v-model="isLoading"
@@ -13,7 +13,7 @@
           @refresh="onRefresh"
         >
           <Wheelplanting :slides="recomend.slides"></Wheelplanting>
-       
+
           <Category :category="recomend.category"></Category>
           <div v-if="recomend.advertesPicture">
             <Advertisement :advertesPicture="recomend.advertesPicture"></Advertisement>
@@ -25,11 +25,11 @@
             <Floor :floor="recomend.floor3" :num="3" :floorName="recomend.floorName.floor3"></Floor>
           </div>
         </van-pull-refresh>
-        <!--  -->
+
         <HotGoods :hotGoods="recomend.hotGoods"></HotGoods>
       </div>
     </scroll>
-    <div v-show="showPop" :value.sync="value">
+    <div v-if="showPop" :value.sync="value">
       <search></search>
     </div>
   </div>
@@ -45,6 +45,7 @@ import Advertisement from "../components/index/advertisement/Advertisement";
 import Floor from "../components/index/floor/Floor";
 import HotGoods from "../components/index/hotGoods/HotGoods";
 import scroll from "../components/common/scroll";
+import common from "../js/common";
 export default {
   name: "",
   data() {
@@ -55,13 +56,14 @@ export default {
       pulldown: true,
       show: false,
       value: null,
-      showPop:false
+      showPop: false,
+      scrollY: true,
+      index: "index"
     };
   },
   updated() {
     console.log(this.value);
     console.log(this.$store.state.searchkey);
-    
   },
   props: {},
   components: {
@@ -107,7 +109,6 @@ export default {
     this.loadData();
   },
   updated() {
-
     // console.log(this.value);
     // console.log(this.$store.state.user);
     // this.$refs.content.style.height =4180+ "px";
@@ -125,6 +126,6 @@ export default {
 .wrapper {
   height: 92.5vh;
   overflow: hidden;
-  touch-action: none;
+  // touch-action: none;
 }
 </style>

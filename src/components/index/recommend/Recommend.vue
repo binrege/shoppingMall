@@ -33,7 +33,7 @@
             <span>￥{{item.price}}</span>
           </div>
           <div class="icon">
-            <div>
+            <div @click="addcar(item.goodsId)">
               <van-icon name="cart" size="20" color="white" />
             </div>
             <div @click="todetails(item.goodsId)">查看详情</div>
@@ -64,7 +64,27 @@ export default {
   methods: {
    todetails(goodsId){
      this.$router.push({path:"/details",query:{goodsId}})
-   }
+   },
+   addcar(goodsId){
+      this.$api.addShop(goodsId).then(res=>{
+        console.log(res);
+         this.getCard()
+      }).catch(err=>{
+        console.log(err);
+      })
+     
+   },
+      getCard() {
+        this.$api
+            .getCard({})
+            .then(res => {
+                console.log(res.shopList);
+                this.$store.state.length = res.shopList.length
+            })
+            .catch(err => {
+                console.log(err);
+            });
+    }
     
   },
   updated() {
@@ -73,7 +93,7 @@ export default {
     // this.$refs.content.style.width=this.recomend.length*131+"px"
   },
   mounted() {
-   
+  
   },
   watch: {},
   computed: {}

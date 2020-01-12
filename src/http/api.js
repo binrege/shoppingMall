@@ -95,8 +95,8 @@ export default {
      * editCart     购物车加减商品      参数 ： 数量  商品id 价格
      * deleteShop   购物车商品删除      参数 id：需要删除的商品cid
      */
-    getCard() {
-        return service.req(`/getCard`)
+    getCard({}) {
+        return service.req(`/getCard`, {})
     },
 
     editCart(count, id, mallPrice) {
@@ -108,7 +108,34 @@ export default {
     },
 
     deleteShop(id) {
-        return service.req('/deleteShop', id)
+        return service.post('/deleteShop', id)
     },
+    addShop(id) {
+        return service.req(`/addShop`, { id })
+    },
+    postAddress({...args }) {
+        return service.post(`/address`, args)
+    },
+    getAddress() {
+        return service.req(`/getAddress`)
+    },
+    deleteAddress(id) {
+        return service.req('/deleteAddress', {
+            id
+        })
+    },
+    getCollection(page = 1) {
+        return service.get(`/collection/list`, {
+            params: { page }
+        })
+    },
+    /**
+     * 购物车支付页面(ShoppingPayMent)所有接口
+     * placeOrder 提交订单 参数：address:收货地址,tel:电话，orderId：所有商品的id，totalPrice：总价格,idDirect:用来判断是购物车结算还是直接购买,count:商品数量
+     */
+    placeOrder({...args }) {
+        return service.post('/order', args)
+    }
+
 
 }
