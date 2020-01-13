@@ -33,8 +33,11 @@ name:'',
        if(this.$route.name==="my")
        {
          this.$emit("update",false)
+       }else if(this.$route.name==="shoppingPayMent"){
+           
+            this.$router.replace("shoppingCar")
        }else{
-            this.$router.history.go(-1)
+          this.$router.go(-1)
        }
        
 

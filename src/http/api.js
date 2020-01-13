@@ -1,4 +1,6 @@
 import service from "./index"
+import axios from "axios"
+
 export default {
     // 获取首页数据
     getRecommend() {
@@ -64,7 +66,7 @@ export default {
     },
 
     comment({...args }) {
-        return service.req(`/goodsOne/comment`, args)
+        return axios.post(`/goodsOne/comment`, args)
     },
     //收藏商品
     collection(goods) {
@@ -135,6 +137,37 @@ export default {
      */
     placeOrder({...args }) {
         return service.post('/order', args)
+    },
+    getOrderNum() {
+        return service.req(`/myOrder/orderNum`)
+    },
+
+    comment({...args }) {
+        return service.req(`/goodsOne/comment`, args)
+    },
+    getMyOrder() {
+        return service.req(`/myOrder`)
+    },
+
+    alreadyEvaluated(page = 1) {
+        return service.get('/alreadyEvaluated', {
+            params: { page }
+        })
+    },
+
+    tobeEvaluated(page = 1) {
+        return service.get('/tobeEvaluated', {
+            params: { page }
+        })
+    },
+
+    evaluateOne(_id) {
+        return service.post('/evaluateOne', {
+            _id
+        })
+    },
+    loginOut({}) {
+        return service.req(`/loginOut`, {})
     }
 
 

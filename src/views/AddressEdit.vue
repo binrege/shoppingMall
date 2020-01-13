@@ -59,6 +59,7 @@ export default {
               console.log(res);
               if (res.code === 200) {
                 this.$router.push("/address");
+                
               }
             })
             .catch(err => {
@@ -136,7 +137,7 @@ export default {
             .then(res => {
               console.log(res);
               if (res.code === 200) {
-                this.$router.push("/address");
+                this.$router.replace("/address");
               }
             })
             .catch(err => {

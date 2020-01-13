@@ -1,0 +1,377 @@
+2020-01-13 15:01:12,961 ERROR 20608 [-/127.0.0.1/-/2ms POST /v1/goodsOne/comment] nodejs.TypeError: Cannot read property 'length' of undefined
+    at OperatingGoodsController.comment (C:\Users\leibin\Desktop\program\programs\shoppingMall\server\app\controller\api\operatingGoods.js:247:24)
+    at Object.callFn (C:\Users\leibin\Desktop\program\programs\shoppingMall\server\node_modules\_egg-core@4.17.4@egg-core\lib\utils\index.js:44:21)
+    at Object.classControllerMiddleware (C:\Users\leibin\Desktop\program\programs\shoppingMall\server\node_modules\_egg-core@4.17.4@egg-core\lib\loader\mixin\controller.js:87:20)
+    at Object.callFn (C:\Users\leibin\Desktop\program\programs\shoppingMall\server\node_modules\_@eggjs_router@2.0.0@@eggjs\router\lib\utils.js:12:21)
+    at wrappedController (C:\Users\leibin\Desktop\program\programs\shoppingMall\server\node_modules\_@eggjs_router@2.0.0@@eggjs\router\lib\egg_router.js:322:18)
+    at dispatch (C:\Users\leibin\Desktop\program\programs\shoppingMall\server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:44:32)
+    at next (C:\Users\leibin\Desktop\program\programs\shoppingMall\server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:45:18)
+    at C:\Users\leibin\Desktop\program\programs\shoppingMall\server\node_modules\_@eggjs_router@2.0.0@@eggjs\router\lib\router.js:190:18
+    at dispatch (C:\Users\leibin\Desktop\program\programs\shoppingMall\server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:44:32)
+    at C:\Users\leibin\Desktop\program\programs\shoppingMall\server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:36:12
+    at dispatch (C:\Users\leibin\Desktop\program\programs\shoppingMall\server\node_modules\_@eggjs_router@2.0.0@@eggjs\router\lib\router.js:195:33)
+    at dispatch (C:\Users\leibin\Desktop\program\programs\shoppingMall\server\node_modules\_koa-compose@4.1.0@koa-compose\index.js:42:32)
+    at C:\Users\leibin\Desktop\program\programs\shoppingMall\server\app\middleware\isLogin.js:15:19
+    at dispatch (C:\Users\leibin\Desktop\program\programs\shoppingMall\server\node_modules\_koa-compose@4.1.0@koa-compose\index.js:42:32)
+    at C:\Users\leibin\Desktop\program\programs\shoppingMall\server\node_modules\_egg-development@2.4.3@egg-development\app\middleware\egg_loader_trace.js:9:56
+    at dispatch (C:\Users\leibin\Desktop\program\programs\shoppingMall\server\node_modules\_koa-compose@4.1.0@koa-compose\index.js:42:32)
+
+pid: 20608
+hostname: leibin
+
+2020-01-13 15:02:57,963 ERROR 20608 [-/127.0.0.1/-/0ms POST /v1/goodsOne/comment] nodejs.TypeError: Cannot read property 'length' of undefined
+    at OperatingGoodsController.comment (C:\Users\leibin\Desktop\program\programs\shoppingMall\server\app\controller\api\operatingGoods.js:247:24)
+    at Object.callFn (C:\Users\leibin\Desktop\program\programs\shoppingMall\server\node_modules\_egg-core@4.17.4@egg-core\lib\utils\index.js:44:21)
+    at Object.classControllerMiddleware (C:\Users\leibin\Desktop\program\programs\shoppingMall\server\node_modules\_egg-core@4.17.4@egg-core\lib\loader\mixin\controller.js:87:20)
+    at Object.callFn (C:\Users\leibin\Desktop\program\programs\shoppingMall\server\node_modules\_@eggjs_router@2.0.0@@eggjs\router\lib\utils.js:12:21)
+    at wrappedController (C:\Users\leibin\Desktop\program\programs\shoppingMall\server\node_modules\_@eggjs_router@2.0.0@@eggjs\router\lib\egg_router.js:322:18)
+    at dispatch (C:\Users\leibin\Desktop\program\programs\shoppingMall\server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:44:32)
+    at next (C:\Users\leibin\Desktop\program\programs\shoppingMall\server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:45:18)
+    at C:\Users\leibin\Desktop\program\programs\shoppingMall\server\node_modules\_@eggjs_router@2.0.0@@eggjs\router\lib\router.js:190:18
+    at dispatch (C:\Users\leibin\Desktop\program\programs\shoppingMall\server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:44:32)
+    at C:\Users\leibin\Desktop\program\programs\shoppingMall\server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:36:12
+    at dispatch (C:\Users\leibin\Desktop\program\programs\shoppingMall\server\node_modules\_@eggjs_router@2.0.0@@eggjs\router\lib\router.js:195:33)
+    at dispatch (C:\Users\leibin\Desktop\program\programs\shoppingMall\server\node_modules\_koa-compose@4.1.0@koa-compose\index.js:42:32)
+    at C:\Users\leibin\Desktop\program\programs\shoppingMall\server\app\middleware\isLogin.js:15:19
+    at dispatch (C:\Users\leibin\Desktop\program\programs\shoppingMall\server\node_modules\_koa-compose@4.1.0@koa-compose\index.js:42:32)
+    at C:\Users\leibin\Desktop\program\programs\shoppingMall\server\node_modules\_egg-development@2.4.3@egg-development\app\middleware\egg_loader_trace.js:9:56
+    at dispatch (C:\Users\leibin\Desktop\program\programs\shoppingMall\server\node_modules\_koa-compose@4.1.0@koa-compose\index.js:42:32)
+
+pid: 20608
+hostname: leibin
+
+2020-01-13 15:03:44,069 ERROR 20608 [-/127.0.0.1/-/0ms POST /v1/goodsOne/comment] nodejs.TypeError: Cannot read property 'length' of undefined
+    at OperatingGoodsController.comment (C:\Users\leibin\Desktop\program\programs\shoppingMall\server\app\controller\api\operatingGoods.js:247:24)
+    at Object.callFn (C:\Users\leibin\Desktop\program\programs\shoppingMall\server\node_modules\_egg-core@4.17.4@egg-core\lib\utils\index.js:44:21)
+    at Object.classControllerMiddleware (C:\Users\leibin\Desktop\program\programs\shoppingMall\server\node_modules\_egg-core@4.17.4@egg-core\lib\loader\mixin\controller.js:87:20)
+    at Object.callFn (C:\Users\leibin\Desktop\program\programs\shoppingMall\server\node_modules\_@eggjs_router@2.0.0@@eggjs\router\lib\utils.js:12:21)
+    at wrappedController (C:\Users\leibin\Desktop\program\programs\shoppingMall\server\node_modules\_@eggjs_router@2.0.0@@eggjs\router\lib\egg_router.js:322:18)
+    at dispatch (C:\Users\leibin\Desktop\program\programs\shoppingMall\server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:44:32)
+    at next (C:\Users\leibin\Desktop\program\programs\shoppingMall\server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:45:18)
+    at C:\Users\leibin\Desktop\program\programs\shoppingMall\server\node_modules\_@eggjs_router@2.0.0@@eggjs\router\lib\router.js:190:18
+    at dispatch (C:\Users\leibin\Desktop\program\programs\shoppingMall\server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:44:32)
+    at C:\Users\leibin\Desktop\program\programs\shoppingMall\server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:36:12
+    at dispatch (C:\Users\leibin\Desktop\program\programs\shoppingMall\server\node_modules\_@eggjs_router@2.0.0@@eggjs\router\lib\router.js:195:33)
+    at dispatch (C:\Users\leibin\Desktop\program\programs\shoppingMall\server\node_modules\_koa-compose@4.1.0@koa-compose\index.js:42:32)
+    at C:\Users\leibin\Desktop\program\programs\shoppingMall\server\app\middleware\isLogin.js:15:19
+    at dispatch (C:\Users\leibin\Desktop\program\programs\shoppingMall\server\node_modules\_koa-compose@4.1.0@koa-compose\index.js:42:32)
+    at C:\Users\leibin\Desktop\program\programs\shoppingMall\server\node_modules\_egg-development@2.4.3@egg-development\app\middleware\egg_loader_trace.js:9:56
+    at dispatch (C:\Users\leibin\Desktop\program\programs\shoppingMall\server\node_modules\_koa-compose@4.1.0@koa-compose\index.js:42:32)
+
+pid: 20608
+hostname: leibin
+
+2020-01-13 15:05:54,767 ERROR 20608 [-/127.0.0.1/-/1ms POST /v1/goodsOne/comment] nodejs.TypeError: Cannot read property 'length' of undefined
+    at OperatingGoodsController.comment (C:\Users\leibin\Desktop\program\programs\shoppingMall\server\app\controller\api\operatingGoods.js:247:24)
+    at Object.callFn (C:\Users\leibin\Desktop\program\programs\shoppingMall\server\node_modules\_egg-core@4.17.4@egg-core\lib\utils\index.js:44:21)
+    at Object.classControllerMiddleware (C:\Users\leibin\Desktop\program\programs\shoppingMall\server\node_modules\_egg-core@4.17.4@egg-core\lib\loader\mixin\controller.js:87:20)
+    at Object.callFn (C:\Users\leibin\Desktop\program\programs\shoppingMall\server\node_modules\_@eggjs_router@2.0.0@@eggjs\router\lib\utils.js:12:21)
+    at wrappedController (C:\Users\leibin\Desktop\program\programs\shoppingMall\server\node_modules\_@eggjs_router@2.0.0@@eggjs\router\lib\egg_router.js:322:18)
+    at dispatch (C:\Users\leibin\Desktop\program\programs\shoppingMall\server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:44:32)
+    at next (C:\Users\leibin\Desktop\program\programs\shoppingMall\server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:45:18)
+    at C:\Users\leibin\Desktop\program\programs\shoppingMall\server\node_modules\_@eggjs_router@2.0.0@@eggjs\router\lib\router.js:190:18
+    at dispatch (C:\Users\leibin\Desktop\program\programs\shoppingMall\server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:44:32)
+    at C:\Users\leibin\Desktop\program\programs\shoppingMall\server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:36:12
+    at dispatch (C:\Users\leibin\Desktop\program\programs\shoppingMall\server\node_modules\_@eggjs_router@2.0.0@@eggjs\router\lib\router.js:195:33)
+    at dispatch (C:\Users\leibin\Desktop\program\programs\shoppingMall\server\node_modules\_koa-compose@4.1.0@koa-compose\index.js:42:32)
+    at C:\Users\leibin\Desktop\program\programs\shoppingMall\server\app\middleware\isLogin.js:15:19
+    at dispatch (C:\Users\leibin\Desktop\program\programs\shoppingMall\server\node_modules\_koa-compose@4.1.0@koa-compose\index.js:42:32)
+    at C:\Users\leibin\Desktop\program\programs\shoppingMall\server\node_modules\_egg-development@2.4.3@egg-development\app\middleware\egg_loader_trace.js:9:56
+    at dispatch (C:\Users\leibin\Desktop\program\programs\shoppingMall\server\node_modules\_koa-compose@4.1.0@koa-compose\index.js:42:32)
+
+pid: 20608
+hostname: leibin
+
+2020-01-13 15:07:42,126 ERROR 20608 [-/127.0.0.1/-/1ms POST /v1/goodsOne/comment] nodejs.TypeError: Cannot read property 'length' of undefined
+    at OperatingGoodsController.comment (C:\Users\leibin\Desktop\program\programs\shoppingMall\server\app\controller\api\operatingGoods.js:247:24)
+    at Object.callFn (C:\Users\leibin\Desktop\program\programs\shoppingMall\server\node_modules\_egg-core@4.17.4@egg-core\lib\utils\index.js:44:21)
+    at Object.classControllerMiddleware (C:\Users\leibin\Desktop\program\programs\shoppingMall\server\node_modules\_egg-core@4.17.4@egg-core\lib\loader\mixin\controller.js:87:20)
+    at Object.callFn (C:\Users\leibin\Desktop\program\programs\shoppingMall\server\node_modules\_@eggjs_router@2.0.0@@eggjs\router\lib\utils.js:12:21)
+    at wrappedController (C:\Users\leibin\Desktop\program\programs\shoppingMall\server\node_modules\_@eggjs_router@2.0.0@@eggjs\router\lib\egg_router.js:322:18)
+    at dispatch (C:\Users\leibin\Desktop\program\programs\shoppingMall\server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:44:32)
+    at next (C:\Users\leibin\Desktop\program\programs\shoppingMall\server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:45:18)
+    at C:\Users\leibin\Desktop\program\programs\shoppingMall\server\node_modules\_@eggjs_router@2.0.0@@eggjs\router\lib\router.js:190:18
+    at dispatch (C:\Users\leibin\Desktop\program\programs\shoppingMall\server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:44:32)
+    at C:\Users\leibin\Desktop\program\programs\shoppingMall\server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:36:12
+    at dispatch (C:\Users\leibin\Desktop\program\programs\shoppingMall\server\node_modules\_@eggjs_router@2.0.0@@eggjs\router\lib\router.js:195:33)
+    at dispatch (C:\Users\leibin\Desktop\program\programs\shoppingMall\server\node_modules\_koa-compose@4.1.0@koa-compose\index.js:42:32)
+    at C:\Users\leibin\Desktop\program\programs\shoppingMall\server\app\middleware\isLogin.js:15:19
+    at dispatch (C:\Users\leibin\Desktop\program\programs\shoppingMall\server\node_modules\_koa-compose@4.1.0@koa-compose\index.js:42:32)
+    at C:\Users\leibin\Desktop\program\programs\shoppingMall\server\node_modules\_egg-development@2.4.3@egg-development\app\middleware\egg_loader_trace.js:9:56
+    at dispatch (C:\Users\leibin\Desktop\program\programs\shoppingMall\server\node_modules\_koa-compose@4.1.0@koa-compose\index.js:42:32)
+
+pid: 20608
+hostname: leibin
+
+2020-01-13 15:08:20,166 ERROR 20608 [-/127.0.0.1/-/1ms POST /v1/goodsOne/comment] nodejs.TypeError: Cannot read property 'length' of undefined
+    at OperatingGoodsController.comment (C:\Users\leibin\Desktop\program\programs\shoppingMall\server\app\controller\api\operatingGoods.js:247:24)
+    at Object.callFn (C:\Users\leibin\Desktop\program\programs\shoppingMall\server\node_modules\_egg-core@4.17.4@egg-core\lib\utils\index.js:44:21)
+    at Object.classControllerMiddleware (C:\Users\leibin\Desktop\program\programs\shoppingMall\server\node_modules\_egg-core@4.17.4@egg-core\lib\loader\mixin\controller.js:87:20)
+    at Object.callFn (C:\Users\leibin\Desktop\program\programs\shoppingMall\server\node_modules\_@eggjs_router@2.0.0@@eggjs\router\lib\utils.js:12:21)
+    at wrappedController (C:\Users\leibin\Desktop\program\programs\shoppingMall\server\node_modules\_@eggjs_router@2.0.0@@eggjs\router\lib\egg_router.js:322:18)
+    at dispatch (C:\Users\leibin\Desktop\program\programs\shoppingMall\server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:44:32)
+    at next (C:\Users\leibin\Desktop\program\programs\shoppingMall\server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:45:18)
+    at C:\Users\leibin\Desktop\program\programs\shoppingMall\server\node_modules\_@eggjs_router@2.0.0@@eggjs\router\lib\router.js:190:18
+    at dispatch (C:\Users\leibin\Desktop\program\programs\shoppingMall\server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:44:32)
+    at C:\Users\leibin\Desktop\program\programs\shoppingMall\server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:36:12
+    at dispatch (C:\Users\leibin\Desktop\program\programs\shoppingMall\server\node_modules\_@eggjs_router@2.0.0@@eggjs\router\lib\router.js:195:33)
+    at dispatch (C:\Users\leibin\Desktop\program\programs\shoppingMall\server\node_modules\_koa-compose@4.1.0@koa-compose\index.js:42:32)
+    at C:\Users\leibin\Desktop\program\programs\shoppingMall\server\app\middleware\isLogin.js:15:19
+    at dispatch (C:\Users\leibin\Desktop\program\programs\shoppingMall\server\node_modules\_koa-compose@4.1.0@koa-compose\index.js:42:32)
+    at C:\Users\leibin\Desktop\program\programs\shoppingMall\server\node_modules\_egg-development@2.4.3@egg-development\app\middleware\egg_loader_trace.js:9:56
+    at dispatch (C:\Users\leibin\Desktop\program\programs\shoppingMall\server\node_modules\_koa-compose@4.1.0@koa-compose\index.js:42:32)
+
+pid: 20608
+hostname: leibin
+
+2020-01-13 15:08:39,434 ERROR 20608 [-/127.0.0.1/-/0ms POST /v1/goodsOne/comment] nodejs.TypeError: Cannot read property 'length' of undefined
+    at OperatingGoodsController.comment (C:\Users\leibin\Desktop\program\programs\shoppingMall\server\app\controller\api\operatingGoods.js:247:24)
+    at Object.callFn (C:\Users\leibin\Desktop\program\programs\shoppingMall\server\node_modules\_egg-core@4.17.4@egg-core\lib\utils\index.js:44:21)
+    at Object.classControllerMiddleware (C:\Users\leibin\Desktop\program\programs\shoppingMall\server\node_modules\_egg-core@4.17.4@egg-core\lib\loader\mixin\controller.js:87:20)
+    at Object.callFn (C:\Users\leibin\Desktop\program\programs\shoppingMall\server\node_modules\_@eggjs_router@2.0.0@@eggjs\router\lib\utils.js:12:21)
+    at wrappedController (C:\Users\leibin\Desktop\program\programs\shoppingMall\server\node_modules\_@eggjs_router@2.0.0@@eggjs\router\lib\egg_router.js:322:18)
+    at dispatch (C:\Users\leibin\Desktop\program\programs\shoppingMall\server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:44:32)
+    at next (C:\Users\leibin\Desktop\program\programs\shoppingMall\server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:45:18)
+    at C:\Users\leibin\Desktop\program\programs\shoppingMall\server\node_modules\_@eggjs_router@2.0.0@@eggjs\router\lib\router.js:190:18
+    at dispatch (C:\Users\leibin\Desktop\program\programs\shoppingMall\server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:44:32)
+    at C:\Users\leibin\Desktop\program\programs\shoppingMall\server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:36:12
+    at dispatch (C:\Users\leibin\Desktop\program\programs\shoppingMall\server\node_modules\_@eggjs_router@2.0.0@@eggjs\router\lib\router.js:195:33)
+    at dispatch (C:\Users\leibin\Desktop\program\programs\shoppingMall\server\node_modules\_koa-compose@4.1.0@koa-compose\index.js:42:32)
+    at C:\Users\leibin\Desktop\program\programs\shoppingMall\server\app\middleware\isLogin.js:15:19
+    at dispatch (C:\Users\leibin\Desktop\program\programs\shoppingMall\server\node_modules\_koa-compose@4.1.0@koa-compose\index.js:42:32)
+    at C:\Users\leibin\Desktop\program\programs\shoppingMall\server\node_modules\_egg-development@2.4.3@egg-development\app\middleware\egg_loader_trace.js:9:56
+    at dispatch (C:\Users\leibin\Desktop\program\programs\shoppingMall\server\node_modules\_koa-compose@4.1.0@koa-compose\index.js:42:32)
+
+pid: 20608
+hostname: leibin
+
+2020-01-13 15:10:48,371 ERROR 20608 [-/127.0.0.1/-/1ms POST /v1/goodsOne/comment] nodejs.TypeError: Cannot read property 'length' of undefined
+    at OperatingGoodsController.comment (C:\Users\leibin\Desktop\program\programs\shoppingMall\server\app\controller\api\operatingGoods.js:247:24)
+    at Object.callFn (C:\Users\leibin\Desktop\program\programs\shoppingMall\server\node_modules\_egg-core@4.17.4@egg-core\lib\utils\index.js:44:21)
+    at Object.classControllerMiddleware (C:\Users\leibin\Desktop\program\programs\shoppingMall\server\node_modules\_egg-core@4.17.4@egg-core\lib\loader\mixin\controller.js:87:20)
+    at Object.callFn (C:\Users\leibin\Desktop\program\programs\shoppingMall\server\node_modules\_@eggjs_router@2.0.0@@eggjs\router\lib\utils.js:12:21)
+    at wrappedController (C:\Users\leibin\Desktop\program\programs\shoppingMall\server\node_modules\_@eggjs_router@2.0.0@@eggjs\router\lib\egg_router.js:322:18)
+    at dispatch (C:\Users\leibin\Desktop\program\programs\shoppingMall\server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:44:32)
+    at next (C:\Users\leibin\Desktop\program\programs\shoppingMall\server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:45:18)
+    at C:\Users\leibin\Desktop\program\programs\shoppingMall\server\node_modules\_@eggjs_router@2.0.0@@eggjs\router\lib\router.js:190:18
+    at dispatch (C:\Users\leibin\Desktop\program\programs\shoppingMall\server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:44:32)
+    at C:\Users\leibin\Desktop\program\programs\shoppingMall\server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:36:12
+    at dispatch (C:\Users\leibin\Desktop\program\programs\shoppingMall\server\node_modules\_@eggjs_router@2.0.0@@eggjs\router\lib\router.js:195:33)
+    at dispatch (C:\Users\leibin\Desktop\program\programs\shoppingMall\server\node_modules\_koa-compose@4.1.0@koa-compose\index.js:42:32)
+    at C:\Users\leibin\Desktop\program\programs\shoppingMall\server\app\middleware\isLogin.js:15:19
+    at dispatch (C:\Users\leibin\Desktop\program\programs\shoppingMall\server\node_modules\_koa-compose@4.1.0@koa-compose\index.js:42:32)
+    at C:\Users\leibin\Desktop\program\programs\shoppingMall\server\node_modules\_egg-development@2.4.3@egg-development\app\middleware\egg_loader_trace.js:9:56
+    at dispatch (C:\Users\leibin\Desktop\program\programs\shoppingMall\server\node_modules\_koa-compose@4.1.0@koa-compose\index.js:42:32)
+
+pid: 20608
+hostname: leibin
+
+2020-01-13 15:11:15,637 ERROR 20608 [-/127.0.0.1/-/2ms POST /v1/goodsOne/comment] nodejs.TypeError: Cannot read property 'length' of undefined
+    at OperatingGoodsController.comment (C:\Users\leibin\Desktop\program\programs\shoppingMall\server\app\controller\api\operatingGoods.js:247:24)
+    at Object.callFn (C:\Users\leibin\Desktop\program\programs\shoppingMall\server\node_modules\_egg-core@4.17.4@egg-core\lib\utils\index.js:44:21)
+    at Object.classControllerMiddleware (C:\Users\leibin\Desktop\program\programs\shoppingMall\server\node_modules\_egg-core@4.17.4@egg-core\lib\loader\mixin\controller.js:87:20)
+    at Object.callFn (C:\Users\leibin\Desktop\program\programs\shoppingMall\server\node_modules\_@eggjs_router@2.0.0@@eggjs\router\lib\utils.js:12:21)
+    at wrappedController (C:\Users\leibin\Desktop\program\programs\shoppingMall\server\node_modules\_@eggjs_router@2.0.0@@eggjs\router\lib\egg_router.js:322:18)
+    at dispatch (C:\Users\leibin\Desktop\program\programs\shoppingMall\server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:44:32)
+    at next (C:\Users\leibin\Desktop\program\programs\shoppingMall\server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:45:18)
+    at C:\Users\leibin\Desktop\program\programs\shoppingMall\server\node_modules\_@eggjs_router@2.0.0@@eggjs\router\lib\router.js:190:18
+    at dispatch (C:\Users\leibin\Desktop\program\programs\shoppingMall\server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:44:32)
+    at C:\Users\leibin\Desktop\program\programs\shoppingMall\server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:36:12
+    at dispatch (C:\Users\leibin\Desktop\program\programs\shoppingMall\server\node_modules\_@eggjs_router@2.0.0@@eggjs\router\lib\router.js:195:33)
+    at dispatch (C:\Users\leibin\Desktop\program\programs\shoppingMall\server\node_modules\_koa-compose@4.1.0@koa-compose\index.js:42:32)
+    at C:\Users\leibin\Desktop\program\programs\shoppingMall\server\app\middleware\isLogin.js:15:19
+    at dispatch (C:\Users\leibin\Desktop\program\programs\shoppingMall\server\node_modules\_koa-compose@4.1.0@koa-compose\index.js:42:32)
+    at C:\Users\leibin\Desktop\program\programs\shoppingMall\server\node_modules\_egg-development@2.4.3@egg-development\app\middleware\egg_loader_trace.js:9:56
+    at dispatch (C:\Users\leibin\Desktop\program\programs\shoppingMall\server\node_modules\_koa-compose@4.1.0@koa-compose\index.js:42:32)
+
+pid: 20608
+hostname: leibin
+
+2020-01-13 15:11:35,559 ERROR 20608 [-/127.0.0.1/-/1ms POST /v1/goodsOne/comment] nodejs.TypeError: Cannot read property 'length' of undefined
+    at OperatingGoodsController.comment (C:\Users\leibin\Desktop\program\programs\shoppingMall\server\app\controller\api\operatingGoods.js:247:24)
+    at Object.callFn (C:\Users\leibin\Desktop\program\programs\shoppingMall\server\node_modules\_egg-core@4.17.4@egg-core\lib\utils\index.js:44:21)
+    at Object.classControllerMiddleware (C:\Users\leibin\Desktop\program\programs\shoppingMall\server\node_modules\_egg-core@4.17.4@egg-core\lib\loader\mixin\controller.js:87:20)
+    at Object.callFn (C:\Users\leibin\Desktop\program\programs\shoppingMall\server\node_modules\_@eggjs_router@2.0.0@@eggjs\router\lib\utils.js:12:21)
+    at wrappedController (C:\Users\leibin\Desktop\program\programs\shoppingMall\server\node_modules\_@eggjs_router@2.0.0@@eggjs\router\lib\egg_router.js:322:18)
+    at dispatch (C:\Users\leibin\Desktop\program\programs\shoppingMall\server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:44:32)
+    at next (C:\Users\leibin\Desktop\program\programs\shoppingMall\server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:45:18)
+    at C:\Users\leibin\Desktop\program\programs\shoppingMall\server\node_modules\_@eggjs_router@2.0.0@@eggjs\router\lib\router.js:190:18
+    at dispatch (C:\Users\leibin\Desktop\program\programs\shoppingMall\server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:44:32)
+    at C:\Users\leibin\Desktop\program\programs\shoppingMall\server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:36:12
+    at dispatch (C:\Users\leibin\Desktop\program\programs\shoppingMall\server\node_modules\_@eggjs_router@2.0.0@@eggjs\router\lib\router.js:195:33)
+    at dispatch (C:\Users\leibin\Desktop\program\programs\shoppingMall\server\node_modules\_koa-compose@4.1.0@koa-compose\index.js:42:32)
+    at C:\Users\leibin\Desktop\program\programs\shoppingMall\server\app\middleware\isLogin.js:15:19
+    at dispatch (C:\Users\leibin\Desktop\program\programs\shoppingMall\server\node_modules\_koa-compose@4.1.0@koa-compose\index.js:42:32)
+    at C:\Users\leibin\Desktop\program\programs\shoppingMall\server\node_modules\_egg-development@2.4.3@egg-development\app\middleware\egg_loader_trace.js:9:56
+    at dispatch (C:\Users\leibin\Desktop\program\programs\shoppingMall\server\node_modules\_koa-compose@4.1.0@koa-compose\index.js:42:32)
+
+pid: 20608
+hostname: leibin
+
+2020-01-13 15:11:55,828 ERROR 20608 [-/127.0.0.1/-/3ms POST /v1/goodsOne/comment] nodejs.ENOENTError: ENOENT: no such file or directory, open 'C:\Users\leibin\Desktop\program\programs\shoppingMall\server\app\public\avatar\157889951582486l9f6jafh10g9-_5e0efe11b4e2a71fd4d0c320.png'
+ENOENTError: ENOENT: no such file or directory, open 'C:\Users\leibin\Desktop\program\programs\shoppingMall\server\app\public\avatar\157889951582486l9f6jafh10g9-_5e0efe11b4e2a71fd4d0c320.png'
+errno: -4058
+code: "ENOENT"
+syscall: "open"
+path: "C:\\Users\\leibin\\Desktop\\program\\programs\\shoppingMall\\server\\app\\public\\avatar\\157889951582486l9f6jafh10g9-_5e0efe11b4e2a71fd4d0c320.png"
+name: "ENOENTError"
+pid: 20608
+hostname: leibin
+
+2020-01-13 15:12:31,062 ERROR 20608 [-/127.0.0.1/-/1ms POST /v1/goodsOne/comment] nodejs.ENOENTError: ENOENT: no such file or directory, open 'C:\Users\leibin\Desktop\program\programs\shoppingMall\server\app\public\avatar\157889955105986l9f6jafh10g9-_5e0efe11b4e2a71fd4d0c320.png'
+ENOENTError: ENOENT: no such file or directory, open 'C:\Users\leibin\Desktop\program\programs\shoppingMall\server\app\public\avatar\157889955105986l9f6jafh10g9-_5e0efe11b4e2a71fd4d0c320.png'
+errno: -4058
+code: "ENOENT"
+syscall: "open"
+path: "C:\\Users\\leibin\\Desktop\\program\\programs\\shoppingMall\\server\\app\\public\\avatar\\157889955105986l9f6jafh10g9-_5e0efe11b4e2a71fd4d0c320.png"
+name: "ENOENTError"
+pid: 20608
+hostname: leibin
+
+2020-01-13 15:12:43,631 ERROR 20608 [-/127.0.0.1/-/1ms POST /v1/goodsOne/comment] nodejs.TypeError: Cannot read property 'length' of undefined
+    at OperatingGoodsController.comment (C:\Users\leibin\Desktop\program\programs\shoppingMall\server\app\controller\api\operatingGoods.js:247:24)
+    at Object.callFn (C:\Users\leibin\Desktop\program\programs\shoppingMall\server\node_modules\_egg-core@4.17.4@egg-core\lib\utils\index.js:44:21)
+    at Object.classControllerMiddleware (C:\Users\leibin\Desktop\program\programs\shoppingMall\server\node_modules\_egg-core@4.17.4@egg-core\lib\loader\mixin\controller.js:87:20)
+    at Object.callFn (C:\Users\leibin\Desktop\program\programs\shoppingMall\server\node_modules\_@eggjs_router@2.0.0@@eggjs\router\lib\utils.js:12:21)
+    at wrappedController (C:\Users\leibin\Desktop\program\programs\shoppingMall\server\node_modules\_@eggjs_router@2.0.0@@eggjs\router\lib\egg_router.js:322:18)
+    at dispatch (C:\Users\leibin\Desktop\program\programs\shoppingMall\server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:44:32)
+    at next (C:\Users\leibin\Desktop\program\programs\shoppingMall\server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:45:18)
+    at C:\Users\leibin\Desktop\program\programs\shoppingMall\server\node_modules\_@eggjs_router@2.0.0@@eggjs\router\lib\router.js:190:18
+    at dispatch (C:\Users\leibin\Desktop\program\programs\shoppingMall\server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:44:32)
+    at C:\Users\leibin\Desktop\program\programs\shoppingMall\server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:36:12
+    at dispatch (C:\Users\leibin\Desktop\program\programs\shoppingMall\server\node_modules\_@eggjs_router@2.0.0@@eggjs\router\lib\router.js:195:33)
+    at dispatch (C:\Users\leibin\Desktop\program\programs\shoppingMall\server\node_modules\_koa-compose@4.1.0@koa-compose\index.js:42:32)
+    at C:\Users\leibin\Desktop\program\programs\shoppingMall\server\app\middleware\isLogin.js:15:19
+    at dispatch (C:\Users\leibin\Desktop\program\programs\shoppingMall\server\node_modules\_koa-compose@4.1.0@koa-compose\index.js:42:32)
+    at C:\Users\leibin\Desktop\program\programs\shoppingMall\server\node_modules\_egg-development@2.4.3@egg-development\app\middleware\egg_loader_trace.js:9:56
+    at dispatch (C:\Users\leibin\Desktop\program\programs\shoppingMall\server\node_modules\_koa-compose@4.1.0@koa-compose\index.js:42:32)
+
+pid: 20608
+hostname: leibin
+
+2020-01-13 15:13:19,278 ERROR 20608 [-/127.0.0.1/-/4ms POST /v1/goodsOne/comment] nodejs.TypeError: Cannot read property 'length' of undefined
+    at OperatingGoodsController.comment (C:\Users\leibin\Desktop\program\programs\shoppingMall\server\app\controller\api\operatingGoods.js:247:24)
+    at Object.callFn (C:\Users\leibin\Desktop\program\programs\shoppingMall\server\node_modules\_egg-core@4.17.4@egg-core\lib\utils\index.js:44:21)
+    at Object.classControllerMiddleware (C:\Users\leibin\Desktop\program\programs\shoppingMall\server\node_modules\_egg-core@4.17.4@egg-core\lib\loader\mixin\controller.js:87:20)
+    at Object.callFn (C:\Users\leibin\Desktop\program\programs\shoppingMall\server\node_modules\_@eggjs_router@2.0.0@@eggjs\router\lib\utils.js:12:21)
+    at wrappedController (C:\Users\leibin\Desktop\program\programs\shoppingMall\server\node_modules\_@eggjs_router@2.0.0@@eggjs\router\lib\egg_router.js:322:18)
+    at dispatch (C:\Users\leibin\Desktop\program\programs\shoppingMall\server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:44:32)
+    at next (C:\Users\leibin\Desktop\program\programs\shoppingMall\server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:45:18)
+    at C:\Users\leibin\Desktop\program\programs\shoppingMall\server\node_modules\_@eggjs_router@2.0.0@@eggjs\router\lib\router.js:190:18
+    at dispatch (C:\Users\leibin\Desktop\program\programs\shoppingMall\server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:44:32)
+    at C:\Users\leibin\Desktop\program\programs\shoppingMall\server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:36:12
+    at dispatch (C:\Users\leibin\Desktop\program\programs\shoppingMall\server\node_modules\_@eggjs_router@2.0.0@@eggjs\router\lib\router.js:195:33)
+    at dispatch (C:\Users\leibin\Desktop\program\programs\shoppingMall\server\node_modules\_koa-compose@4.1.0@koa-compose\index.js:42:32)
+    at C:\Users\leibin\Desktop\program\programs\shoppingMall\server\app\middleware\isLogin.js:15:19
+    at dispatch (C:\Users\leibin\Desktop\program\programs\shoppingMall\server\node_modules\_koa-compose@4.1.0@koa-compose\index.js:42:32)
+    at C:\Users\leibin\Desktop\program\programs\shoppingMall\server\node_modules\_egg-development@2.4.3@egg-development\app\middleware\egg_loader_trace.js:9:56
+    at dispatch (C:\Users\leibin\Desktop\program\programs\shoppingMall\server\node_modules\_koa-compose@4.1.0@koa-compose\index.js:42:32)
+
+pid: 20608
+hostname: leibin
+
+2020-01-13 15:14:29,015 ERROR 20608 [-/127.0.0.1/-/1ms POST /v1/goodsOne/comment] nodejs.TypeError: Cannot read property 'length' of undefined
+    at OperatingGoodsController.comment (C:\Users\leibin\Desktop\program\programs\shoppingMall\server\app\controller\api\operatingGoods.js:247:24)
+    at Object.callFn (C:\Users\leibin\Desktop\program\programs\shoppingMall\server\node_modules\_egg-core@4.17.4@egg-core\lib\utils\index.js:44:21)
+    at Object.classControllerMiddleware (C:\Users\leibin\Desktop\program\programs\shoppingMall\server\node_modules\_egg-core@4.17.4@egg-core\lib\loader\mixin\controller.js:87:20)
+    at Object.callFn (C:\Users\leibin\Desktop\program\programs\shoppingMall\server\node_modules\_@eggjs_router@2.0.0@@eggjs\router\lib\utils.js:12:21)
+    at wrappedController (C:\Users\leibin\Desktop\program\programs\shoppingMall\server\node_modules\_@eggjs_router@2.0.0@@eggjs\router\lib\egg_router.js:322:18)
+    at dispatch (C:\Users\leibin\Desktop\program\programs\shoppingMall\server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:44:32)
+    at next (C:\Users\leibin\Desktop\program\programs\shoppingMall\server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:45:18)
+    at C:\Users\leibin\Desktop\program\programs\shoppingMall\server\node_modules\_@eggjs_router@2.0.0@@eggjs\router\lib\router.js:190:18
+    at dispatch (C:\Users\leibin\Desktop\program\programs\shoppingMall\server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:44:32)
+    at C:\Users\leibin\Desktop\program\programs\shoppingMall\server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:36:12
+    at dispatch (C:\Users\leibin\Desktop\program\programs\shoppingMall\server\node_modules\_@eggjs_router@2.0.0@@eggjs\router\lib\router.js:195:33)
+    at dispatch (C:\Users\leibin\Desktop\program\programs\shoppingMall\server\node_modules\_koa-compose@4.1.0@koa-compose\index.js:42:32)
+    at C:\Users\leibin\Desktop\program\programs\shoppingMall\server\app\middleware\isLogin.js:15:19
+    at dispatch (C:\Users\leibin\Desktop\program\programs\shoppingMall\server\node_modules\_koa-compose@4.1.0@koa-compose\index.js:42:32)
+    at C:\Users\leibin\Desktop\program\programs\shoppingMall\server\node_modules\_egg-development@2.4.3@egg-development\app\middleware\egg_loader_trace.js:9:56
+    at dispatch (C:\Users\leibin\Desktop\program\programs\shoppingMall\server\node_modules\_koa-compose@4.1.0@koa-compose\index.js:42:32)
+
+pid: 20608
+hostname: leibin
+
+2020-01-13 16:47:17,324 ERROR 20608 [-/127.0.0.1/-/5ms POST /v1/evaluateOne] nodejs.Error: Argument passed in must be a single String of 12 bytes or a string of 24 hex characters
+    at new ObjectID (C:\Users\leibin\Desktop\program\programs\shoppingMall\server\node_modules\_bson@1.1.3@bson\lib\bson\objectid.js:59:11)
+    at ObjectID [as ObjectId] (C:\Users\leibin\Desktop\program\programs\shoppingMall\server\node_modules\_bson@1.1.3@bson\lib\bson\objectid.js:40:43)
+    at UserController.evaluateOne (C:\Users\leibin\Desktop\program\programs\shoppingMall\server\app\controller\api\user.js:453:52)
+    at Object.callFn (C:\Users\leibin\Desktop\program\programs\shoppingMall\server\node_modules\_egg-core@4.17.4@egg-core\lib\utils\index.js:44:21)
+    at Object.classControllerMiddleware (C:\Users\leibin\Desktop\program\programs\shoppingMall\server\node_modules\_egg-core@4.17.4@egg-core\lib\loader\mixin\controller.js:87:20)
+    at Object.callFn (C:\Users\leibin\Desktop\program\programs\shoppingMall\server\node_modules\_@eggjs_router@2.0.0@@eggjs\router\lib\utils.js:12:21)
+    at wrappedController (C:\Users\leibin\Desktop\program\programs\shoppingMall\server\node_modules\_@eggjs_router@2.0.0@@eggjs\router\lib\egg_router.js:322:18)
+    at dispatch (C:\Users\leibin\Desktop\program\programs\shoppingMall\server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:44:32)
+    at next (C:\Users\leibin\Desktop\program\programs\shoppingMall\server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:45:18)
+    at C:\Users\leibin\Desktop\program\programs\shoppingMall\server\node_modules\_@eggjs_router@2.0.0@@eggjs\router\lib\router.js:190:18
+    at dispatch (C:\Users\leibin\Desktop\program\programs\shoppingMall\server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:44:32)
+    at C:\Users\leibin\Desktop\program\programs\shoppingMall\server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:36:12
+    at dispatch (C:\Users\leibin\Desktop\program\programs\shoppingMall\server\node_modules\_@eggjs_router@2.0.0@@eggjs\router\lib\router.js:195:33)
+    at dispatch (C:\Users\leibin\Desktop\program\programs\shoppingMall\server\node_modules\_koa-compose@4.1.0@koa-compose\index.js:42:32)
+    at C:\Users\leibin\Desktop\program\programs\shoppingMall\server\app\middleware\isLogin.js:15:19
+    at dispatch (C:\Users\leibin\Desktop\program\programs\shoppingMall\server\node_modules\_koa-compose@4.1.0@koa-compose\index.js:42:32)
+
+pid: 20608
+hostname: leibin
+
+2020-01-13 16:47:26,670 ERROR 20608 [-/127.0.0.1/-/1ms POST /v1/evaluateOne] nodejs.Error: Argument passed in must be a single String of 12 bytes or a string of 24 hex characters
+    at new ObjectID (C:\Users\leibin\Desktop\program\programs\shoppingMall\server\node_modules\_bson@1.1.3@bson\lib\bson\objectid.js:59:11)
+    at ObjectID [as ObjectId] (C:\Users\leibin\Desktop\program\programs\shoppingMall\server\node_modules\_bson@1.1.3@bson\lib\bson\objectid.js:40:43)
+    at UserController.evaluateOne (C:\Users\leibin\Desktop\program\programs\shoppingMall\server\app\controller\api\user.js:453:52)
+    at Object.callFn (C:\Users\leibin\Desktop\program\programs\shoppingMall\server\node_modules\_egg-core@4.17.4@egg-core\lib\utils\index.js:44:21)
+    at Object.classControllerMiddleware (C:\Users\leibin\Desktop\program\programs\shoppingMall\server\node_modules\_egg-core@4.17.4@egg-core\lib\loader\mixin\controller.js:87:20)
+    at Object.callFn (C:\Users\leibin\Desktop\program\programs\shoppingMall\server\node_modules\_@eggjs_router@2.0.0@@eggjs\router\lib\utils.js:12:21)
+    at wrappedController (C:\Users\leibin\Desktop\program\programs\shoppingMall\server\node_modules\_@eggjs_router@2.0.0@@eggjs\router\lib\egg_router.js:322:18)
+    at dispatch (C:\Users\leibin\Desktop\program\programs\shoppingMall\server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:44:32)
+    at next (C:\Users\leibin\Desktop\program\programs\shoppingMall\server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:45:18)
+    at C:\Users\leibin\Desktop\program\programs\shoppingMall\server\node_modules\_@eggjs_router@2.0.0@@eggjs\router\lib\router.js:190:18
+    at dispatch (C:\Users\leibin\Desktop\program\programs\shoppingMall\server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:44:32)
+    at C:\Users\leibin\Desktop\program\programs\shoppingMall\server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:36:12
+    at dispatch (C:\Users\leibin\Desktop\program\programs\shoppingMall\server\node_modules\_@eggjs_router@2.0.0@@eggjs\router\lib\router.js:195:33)
+    at dispatch (C:\Users\leibin\Desktop\program\programs\shoppingMall\server\node_modules\_koa-compose@4.1.0@koa-compose\index.js:42:32)
+    at C:\Users\leibin\Desktop\program\programs\shoppingMall\server\app\middleware\isLogin.js:15:19
+    at dispatch (C:\Users\leibin\Desktop\program\programs\shoppingMall\server\node_modules\_koa-compose@4.1.0@koa-compose\index.js:42:32)
+
+pid: 20608
+hostname: leibin
+
+2020-01-13 16:48:00,898 ERROR 20608 [-/127.0.0.1/-/1ms POST /v1/evaluateOne] nodejs.Error: Argument passed in must be a single String of 12 bytes or a string of 24 hex characters
+    at new ObjectID (C:\Users\leibin\Desktop\program\programs\shoppingMall\server\node_modules\_bson@1.1.3@bson\lib\bson\objectid.js:59:11)
+    at ObjectID [as ObjectId] (C:\Users\leibin\Desktop\program\programs\shoppingMall\server\node_modules\_bson@1.1.3@bson\lib\bson\objectid.js:40:43)
+    at UserController.evaluateOne (C:\Users\leibin\Desktop\program\programs\shoppingMall\server\app\controller\api\user.js:453:52)
+    at Object.callFn (C:\Users\leibin\Desktop\program\programs\shoppingMall\server\node_modules\_egg-core@4.17.4@egg-core\lib\utils\index.js:44:21)
+    at Object.classControllerMiddleware (C:\Users\leibin\Desktop\program\programs\shoppingMall\server\node_modules\_egg-core@4.17.4@egg-core\lib\loader\mixin\controller.js:87:20)
+    at Object.callFn (C:\Users\leibin\Desktop\program\programs\shoppingMall\server\node_modules\_@eggjs_router@2.0.0@@eggjs\router\lib\utils.js:12:21)
+    at wrappedController (C:\Users\leibin\Desktop\program\programs\shoppingMall\server\node_modules\_@eggjs_router@2.0.0@@eggjs\router\lib\egg_router.js:322:18)
+    at dispatch (C:\Users\leibin\Desktop\program\programs\shoppingMall\server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:44:32)
+    at next (C:\Users\leibin\Desktop\program\programs\shoppingMall\server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:45:18)
+    at C:\Users\leibin\Desktop\program\programs\shoppingMall\server\node_modules\_@eggjs_router@2.0.0@@eggjs\router\lib\router.js:190:18
+    at dispatch (C:\Users\leibin\Desktop\program\programs\shoppingMall\server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:44:32)
+    at C:\Users\leibin\Desktop\program\programs\shoppingMall\server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:36:12
+    at dispatch (C:\Users\leibin\Desktop\program\programs\shoppingMall\server\node_modules\_@eggjs_router@2.0.0@@eggjs\router\lib\router.js:195:33)
+    at dispatch (C:\Users\leibin\Desktop\program\programs\shoppingMall\server\node_modules\_koa-compose@4.1.0@koa-compose\index.js:42:32)
+    at C:\Users\leibin\Desktop\program\programs\shoppingMall\server\app\middleware\isLogin.js:15:19
+    at dispatch (C:\Users\leibin\Desktop\program\programs\shoppingMall\server\node_modules\_koa-compose@4.1.0@koa-compose\index.js:42:32)
+
+pid: 20608
+hostname: leibin
+
+2020-01-13 16:51:40,371 ERROR 20608 [-/127.0.0.1/-/0ms POST /v1/evaluateOne] nodejs.Error: Argument passed in must be a single String of 12 bytes or a string of 24 hex characters
+    at new ObjectID (C:\Users\leibin\Desktop\program\programs\shoppingMall\server\node_modules\_bson@1.1.3@bson\lib\bson\objectid.js:59:11)
+    at ObjectID [as ObjectId] (C:\Users\leibin\Desktop\program\programs\shoppingMall\server\node_modules\_bson@1.1.3@bson\lib\bson\objectid.js:40:43)
+    at UserController.evaluateOne (C:\Users\leibin\Desktop\program\programs\shoppingMall\server\app\controller\api\user.js:453:52)
+    at Object.callFn (C:\Users\leibin\Desktop\program\programs\shoppingMall\server\node_modules\_egg-core@4.17.4@egg-core\lib\utils\index.js:44:21)
+    at Object.classControllerMiddleware (C:\Users\leibin\Desktop\program\programs\shoppingMall\server\node_modules\_egg-core@4.17.4@egg-core\lib\loader\mixin\controller.js:87:20)
+    at Object.callFn (C:\Users\leibin\Desktop\program\programs\shoppingMall\server\node_modules\_@eggjs_router@2.0.0@@eggjs\router\lib\utils.js:12:21)
+    at wrappedController (C:\Users\leibin\Desktop\program\programs\shoppingMall\server\node_modules\_@eggjs_router@2.0.0@@eggjs\router\lib\egg_router.js:322:18)
+    at dispatch (C:\Users\leibin\Desktop\program\programs\shoppingMall\server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:44:32)
+    at next (C:\Users\leibin\Desktop\program\programs\shoppingMall\server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:45:18)
+    at C:\Users\leibin\Desktop\program\programs\shoppingMall\server\node_modules\_@eggjs_router@2.0.0@@eggjs\router\lib\router.js:190:18
+    at dispatch (C:\Users\leibin\Desktop\program\programs\shoppingMall\server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:44:32)
+    at C:\Users\leibin\Desktop\program\programs\shoppingMall\server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:36:12
+    at dispatch (C:\Users\leibin\Desktop\program\programs\shoppingMall\server\node_modules\_@eggjs_router@2.0.0@@eggjs\router\lib\router.js:195:33)
+    at dispatch (C:\Users\leibin\Desktop\program\programs\shoppingMall\server\node_modules\_koa-compose@4.1.0@koa-compose\index.js:42:32)
+    at C:\Users\leibin\Desktop\program\programs\shoppingMall\server\app\middleware\isLogin.js:15:19
+    at dispatch (C:\Users\leibin\Desktop\program\programs\shoppingMall\server\node_modules\_koa-compose@4.1.0@koa-compose\index.js:42:32)
+
+pid: 20608
+hostname: leibin
+

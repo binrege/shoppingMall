@@ -16,4 +16,5 @@ export default {
     from: "",
     recentlybrowse: [],
     shoppingGoodsList: [],
+    evaluated: 0,
 }

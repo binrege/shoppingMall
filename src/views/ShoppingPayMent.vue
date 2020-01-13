@@ -116,7 +116,7 @@ export default {
           });
           console.log(res);
           this.$store.state.shoppingGoodsList = [];
-          this.$router.push("/");
+          this.$router.push("/shoppingCar");
         })
         .catch(err => {
           console.log(err);

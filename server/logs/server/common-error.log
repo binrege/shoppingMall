@@ -1,0 +1,20 @@
+2020-01-14 00:07:24,978 ERROR 19556 [-/127.0.0.1/-/8ms POST /v1/saveUser] nodejs.ENOENTError: ENOENT: no such file or directory, open 'C:\Users\leibin\Desktop\program\programs\shoppingMall\server\app\public\avatar\157893164497186l9f6jafh10g9-_5e0efe11b4e2a71fd4d0c320.png'
+ENOENTError: ENOENT: no such file or directory, open 'C:\Users\leibin\Desktop\program\programs\shoppingMall\server\app\public\avatar\157893164497186l9f6jafh10g9-_5e0efe11b4e2a71fd4d0c320.png'
+errno: -4058
+code: "ENOENT"
+syscall: "open"
+path: "C:\\Users\\leibin\\Desktop\\program\\programs\\shoppingMall\\server\\app\\public\\avatar\\157893164497186l9f6jafh10g9-_5e0efe11b4e2a71fd4d0c320.png"
+name: "ENOENTError"
+pid: 19556
+hostname: leibin
+
+2020-01-14 00:08:13,449 ERROR 19556 [-/127.0.0.1/-/2ms POST /v1/saveUser] nodejs.ENOENTError: ENOENT: no such file or directory, open 'C:\Users\leibin\Desktop\program\programs\shoppingMall\server\app\public\avatar\157893169344886l9f6jafh10g9-_5e0efe11b4e2a71fd4d0c320.png'
+ENOENTError: ENOENT: no such file or directory, open 'C:\Users\leibin\Desktop\program\programs\shoppingMall\server\app\public\avatar\157893169344886l9f6jafh10g9-_5e0efe11b4e2a71fd4d0c320.png'
+errno: -4058
+code: "ENOENT"
+syscall: "open"
+path: "C:\\Users\\leibin\\Desktop\\program\\programs\\shoppingMall\\server\\app\\public\\avatar\\157893169344886l9f6jafh10g9-_5e0efe11b4e2a71fd4d0c320.png"
+name: "ENOENTError"
+pid: 19556
+hostname: leibin
+

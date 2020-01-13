@@ -89,6 +89,18 @@ export default {
           console.log(err);
         });
     },
+     tobeEvaluated() {
+      this.$api
+        .tobeEvaluated()
+        .then(res => {
+          console.log(res);
+        this.orderList=res.data.list
+        this.$store.state.evaluate = this.orderList.length;
+        })
+        .catch(err => {
+          console.log(err);
+        });
+    },
     loadData() {
       this.getRecommend();
     },
@@ -116,6 +128,7 @@ export default {
   },
   mounted() {
     this.getRecommend();
+    this.tobeEvaluated()
   },
   watch: {},
   computed: {}

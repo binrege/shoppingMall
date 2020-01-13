@@ -1,0 +1,31 @@
+2020-01-13 00:00:01,025 INFO 4428 [egg-logrotator] agent logger reload: got log-reload message
+2020-01-13 08:31:13,961 INFO 8972 [egg:logger] init all loggers with options: {"dir":"C:\\Users\\leibin\\Desktop\\program\\programs\\shoppingMall\\server\\logs\\server","encoding":"utf8","env":"local","level":"INFO","consoleLevel":"INFO","disableConsoleAfterReady":false,"outputJSON":false,"buffer":true,"appLogName":"server-web.log","coreLogName":"egg-web.log","agentLogName":"egg-agent.log","errorLogName":"common-error.log","coreLogger":{"consoleLevel":"WARN"},"allowDebugAtProd":false,"type":"agent"}
+2020-01-13 08:31:13,972 INFO 8972 [egg:core] dump config after load, 6ms
+2020-01-13 08:31:14,194 INFO 8972 [egg-watcher] Start watching: ["C:\\Users\\leibin\\Desktop\\program\\programs\\shoppingMall\\server\\app","C:\\Users\\leibin\\Desktop\\program\\programs\\shoppingMall\\server\\config","C:\\Users\\leibin\\Desktop\\program\\programs\\shoppingMall\\server\\mocks","C:\\Users\\leibin\\Desktop\\program\\programs\\shoppingMall\\server\\mocks_proxy","C:\\Users\\leibin\\Desktop\\program\\programs\\shoppingMall\\server\\app.js"]
+2020-01-13 08:31:14,194 INFO 8972 [egg-watcher] Start watching: "C:\\Users\\leibin\\Desktop\\program\\programs\\shoppingMall\\server\\app"
+2020-01-13 08:31:14,194 INFO 8972 [egg-watcher] Start watching: "C:\\Users\\leibin\\Desktop\\program\\programs\\shoppingMall\\server\\config"
+2020-01-13 08:31:14,195 INFO 8972 [egg-watcher] Start watching: "C:\\Users\\leibin\\Desktop\\program\\programs\\shoppingMall\\server\\mocks"
+2020-01-13 08:31:14,195 INFO 8972 [egg-watcher] Start watching: "C:\\Users\\leibin\\Desktop\\program\\programs\\shoppingMall\\server\\mocks_proxy"
+2020-01-13 08:31:14,196 INFO 8972 [egg-watcher] Start watching: "C:\\Users\\leibin\\Desktop\\program\\programs\\shoppingMall\\server\\app.js"
+2020-01-13 08:31:14,197 INFO 8972 [egg-watcher:agent] watcher start success
+2020-01-13 08:31:14,232 INFO 8972 [egg:core] dump config after ready, 8ms
+2020-01-13 14:19:09,709 INFO 8032 [egg:logger] init all loggers with options: {"dir":"C:\\Users\\leibin\\Desktop\\program\\programs\\shoppingMall\\server\\logs\\server","encoding":"utf8","env":"local","level":"INFO","consoleLevel":"INFO","disableConsoleAfterReady":false,"outputJSON":false,"buffer":true,"appLogName":"server-web.log","coreLogName":"egg-web.log","agentLogName":"egg-agent.log","errorLogName":"common-error.log","coreLogger":{"consoleLevel":"WARN"},"allowDebugAtProd":false,"type":"agent"}
+2020-01-13 14:19:09,720 INFO 8032 [egg:core] dump config after load, 6ms
+2020-01-13 14:19:09,820 INFO 8032 [egg-watcher] Start watching: ["C:\\Users\\leibin\\Desktop\\program\\programs\\shoppingMall\\server\\app","C:\\Users\\leibin\\Desktop\\program\\programs\\shoppingMall\\server\\config","C:\\Users\\leibin\\Desktop\\program\\programs\\shoppingMall\\server\\mocks","C:\\Users\\leibin\\Desktop\\program\\programs\\shoppingMall\\server\\mocks_proxy","C:\\Users\\leibin\\Desktop\\program\\programs\\shoppingMall\\server\\app.js"]
+2020-01-13 14:19:09,820 INFO 8032 [egg-watcher] Start watching: "C:\\Users\\leibin\\Desktop\\program\\programs\\shoppingMall\\server\\app"
+2020-01-13 14:19:09,821 INFO 8032 [egg-watcher] Start watching: "C:\\Users\\leibin\\Desktop\\program\\programs\\shoppingMall\\server\\config"
+2020-01-13 14:19:09,821 INFO 8032 [egg-watcher] Start watching: "C:\\Users\\leibin\\Desktop\\program\\programs\\shoppingMall\\server\\mocks"
+2020-01-13 14:19:09,821 INFO 8032 [egg-watcher] Start watching: "C:\\Users\\leibin\\Desktop\\program\\programs\\shoppingMall\\server\\mocks_proxy"
+2020-01-13 14:19:09,821 INFO 8032 [egg-watcher] Start watching: "C:\\Users\\leibin\\Desktop\\program\\programs\\shoppingMall\\server\\app.js"
+2020-01-13 14:19:09,822 INFO 8032 [egg-watcher:agent] watcher start success
+2020-01-13 14:19:09,849 INFO 8032 [egg:core] dump config after ready, 7ms
+2020-01-13 22:24:03,782 INFO 11440 [egg:logger] init all loggers with options: {"dir":"C:\\Users\\leibin\\Desktop\\program\\programs\\shoppingMall\\server\\logs\\server","encoding":"utf8","env":"local","level":"INFO","consoleLevel":"INFO","disableConsoleAfterReady":false,"outputJSON":false,"buffer":true,"appLogName":"server-web.log","coreLogName":"egg-web.log","agentLogName":"egg-agent.log","errorLogName":"common-error.log","coreLogger":{"consoleLevel":"WARN"},"allowDebugAtProd":false,"type":"agent"}
+2020-01-13 22:24:03,792 INFO 11440 [egg:core] dump config after load, 6ms
+2020-01-13 22:24:03,891 INFO 11440 [egg-watcher] Start watching: ["C:\\Users\\leibin\\Desktop\\program\\programs\\shoppingMall\\server\\app","C:\\Users\\leibin\\Desktop\\program\\programs\\shoppingMall\\server\\config","C:\\Users\\leibin\\Desktop\\program\\programs\\shoppingMall\\server\\mocks","C:\\Users\\leibin\\Desktop\\program\\programs\\shoppingMall\\server\\mocks_proxy","C:\\Users\\leibin\\Desktop\\program\\programs\\shoppingMall\\server\\app.js"]
+2020-01-13 22:24:03,891 INFO 11440 [egg-watcher] Start watching: "C:\\Users\\leibin\\Desktop\\program\\programs\\shoppingMall\\server\\app"
+2020-01-13 22:24:03,892 INFO 11440 [egg-watcher] Start watching: "C:\\Users\\leibin\\Desktop\\program\\programs\\shoppingMall\\server\\config"
+2020-01-13 22:24:03,892 INFO 11440 [egg-watcher] Start watching: "C:\\Users\\leibin\\Desktop\\program\\programs\\shoppingMall\\server\\mocks"
+2020-01-13 22:24:03,892 INFO 11440 [egg-watcher] Start watching: "C:\\Users\\leibin\\Desktop\\program\\programs\\shoppingMall\\server\\mocks_proxy"
+2020-01-13 22:24:03,892 INFO 11440 [egg-watcher] Start watching: "C:\\Users\\leibin\\Desktop\\program\\programs\\shoppingMall\\server\\app.js"
+2020-01-13 22:24:03,893 INFO 11440 [egg-watcher:agent] watcher start success
+2020-01-13 22:24:03,919 INFO 11440 [egg:core] dump config after ready, 7ms

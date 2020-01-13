@@ -2,7 +2,7 @@
   <div>
     <backBtn></backBtn>
 
-    <van-sku
+    <!-- <van-sku
       v-model="shows"
       ref="hop"
       :sku="sku"
@@ -14,7 +14,7 @@
       :custom-stepper-config="customStepperConfig"
       @buy-clicked="onBuyClicked"
       @add-cart="onAddCartClicked"
-    />
+    />-->
 
     <scroll class="wrapper" :click="false" :scrollY="true">
       <div ref="content" class="content">
@@ -58,15 +58,60 @@
           </div>
         </div>
 
-        <van-tabs v-model="active" swipeable title-active-color="red" line-height="0">
+        <van-tabs v-model="active" sticky swipeable title-active-color="red" line-height="0">
           <van-tab title="商品详情">
             <div v-html="goods.detail"></div>
           </van-tab>
-          <van-tab title="商品评论"></van-tab>
+          <van-tab title="商品评论">
+            <div v-if="comment.length===0">暂无评论</div>
+
+            <div v-else>
+              <div v-for="(item,index) in comment" :key="index" class="comments">
+                <div class="comments-sider">
+                  <div>
+                    <img :src="item.comment_avatar" alt />
+                  </div>
+                  <div>
+                    <div class="nickname">
+                      <div>{{item.comment_nickname}}</div>
+                      <div>{{item.comment_time}}</div>
+                    </div>
+                    <div>
+                      <van-rate readonly v-model="item.rate" />
+                    </div>
+                  </div>
+                </div>
+                <div>{{item.content}}</div>
+              </div>
+            </div>
+          </van-tab>
         </van-tabs>
       </div>
     </scroll>
-
+    <van-popup
+      v-model="showw"
+      closeable
+      close-icon="close"
+      position="bottom"
+      :style="{ height: '40%' }"
+    >
+      <div>
+        <div>
+          <van-card :price="goods.present_price" :title="goods.name" :thumb="goods.image_path" />
+        </div>
+        <div class="middles">
+          <div>购买数量:</div>
+          <div>
+            <van-stepper v-model="value" integer min="1" max="10" />
+          </div>
+        </div>
+        <div class="tip"> 
+          剩余:{{goods.amount}}件
+          <span>每人限购10件</span>
+        </div>
+        <div><van-button type="warning" @click="buyNow">立即购买</van-button></div>
+      </div>
+    </van-popup>
     <van-goods-action>
       <van-goods-action-icon icon="wap-home-o" to="/" text="首页" />
       <van-goods-action-icon icon="cart-o" to="shoppingCar" text="购物车" :info="count" />
@@ -84,11 +129,13 @@ export default {
   name: "",
   data() {
     return {
+      value: null,
       goods: {},
       current: 0,
       isLogin: true,
       show: false,
       shows: false,
+      showw: false,
       index: 1,
       indexs: 1,
       images: [],
@@ -97,6 +144,7 @@ export default {
       count: null,
       quota: 10,
       quotaUsed: null,
+      comment: [],
       customStepperConfig: {
         // 自定义限购文案
         quotaText: "",
@@ -206,8 +254,8 @@ export default {
     onAddCartClicked() {},
     shopNow() {
       console.log(111);
-      this.shows = true;
-      console.log(this.shows);
+      this.showw = true;
+      console.log(this.showw);
     },
     onChange(index) {
       this.current = index;
@@ -225,6 +273,7 @@ export default {
         .then(res => {
           console.log(res);
           this.goods = res.goods.goodsOne;
+          this.comment = res.goods.comment;
           this.goodss.title = this.goods.name;
           this.goodss.picture = this.goods.image_path;
           this.sku.list[0].price = this.goods.present_price * 100;
@@ -232,7 +281,7 @@ export default {
           //将最近浏览保存在vuex
           let nickName = currentUser.user.nickname + "recentlybrowse";
           let arrlist = this.$store.state.recentlybrowse;
-          if ((arrlist.length === 0)) {
+          if (arrlist.length === 0) {
             arrlist.push({
               [nickName]: [this.goods]
             });
@@ -240,7 +289,7 @@ export default {
             arrlist.map(item => {
               console.log(item);
               console.log();
-           
+
               if (Object.keys(item)[0] === nickName) {
                 if (
                   !JSON.stringify(item[Object.keys(item)[0]]).includes(
@@ -253,9 +302,8 @@ export default {
               }
             });
           }
-        
-          this.$store.state.recentlybrowse = arrlist;
 
+          this.$store.state.recentlybrowse = arrlist;
 
           for (let i = 0; i < 4; i++) {
             this.images.push(res.goods.goodsOne.image_path);
@@ -334,6 +382,13 @@ export default {
         .catch(err => {
           console.log(err);
         });
+    },
+    buyNow(){
+      this.goods.count=this.value
+      this.goods.mallPrice= this.goods.present_price
+      console.log(this.goods);
+      this.$store.state.shoppingGoodsList=[this.goods]
+      this.$router.push("/shoppingPayMent")
     }
   },
   mounted() {
@@ -412,5 +467,40 @@ img {
     justify-content: center;
     align-items: center;
   }
+}
+.comments {
+  padding: 0 10px;
+  img {
+    width: 50px;
+  }
+  > div:last-child {
+    padding-left: 60px;
+  }
+}
+.comments-sider {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  > div {
+    margin-right: 10px;
+  }
+}
+.nickname {
+  width: 78.333vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.middles {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 20px;
+}
+.tip{
+  margin:10px 0 40px 0 ;
+}
+.van-button{
+  width: 100%;
 }
 </style>

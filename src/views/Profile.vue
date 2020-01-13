@@ -1,19 +1,22 @@
 <template>
   <div class="home">
     <TopTittle>会员中心</TopTittle>
-    <div v-if="userInfo===null" class="my">
+    <div v-if="$store.state.currentUser===null" class="my">
       <div class="logo">
-         
+        <img src="http://img4.imgtn.bdimg.com/it/u=198369807,133263955&fm=27&gp=0.jpg" alt />
       </div>
       <div @click="toLogin">登录/注册</div>
     </div>
     <div v-else class="my">
       <div class="sets iconfont iconshezhi" @click="setInfo"></div>
-      <div> 
-        <img :src="userInfo.user.avatar" alt />
+      <div v-if="$store.state.currentUser.user">
+        <img :src="$store.state.currentUser.user.avatar" alt />
       </div>
 
-      <div class="username">欢迎您 {{userInfo.user.nickname}}</div>
+      <div
+        v-if="$store.state.currentUser.user"
+        class="username"
+      >欢迎您 {{$store.state.currentUser.user.nickname}}</div>
       <div class="exit" @click="leave">退出登录</div>
     </div>
     <div class="menu1">
@@ -29,10 +32,15 @@
         <div class="iconfont icondaishouhuo"></div>
         <div>待收货</div>
       </div>
-      <div class="temp" @click="jump('/evaluate')">
+      <div v-if="!$store.state.evaluate||$store.state.evaluate===0" class="temp" @click="jump('/evaluate')">
         <div class="iconfont iconpingjia"></div>
         <div>评价</div>
-        
+        <input type="text" disabled v-model="$store.state.evaluate" class="info"/>
+      </div>
+      <div v-else class="temp" @click="jump('/evaluate')">
+        <div class="iconfont iconpingjia"></div>
+        <div>评价</div>
+        <input type="text" disabled v-model="$store.state.evaluate" class="info" />
       </div>
       <div class="temp" @click="jump('/order',4)">
         <div class="iconfont iconshoucang4"></div>
@@ -83,7 +91,9 @@ export default {
       images: require("../assets/images/defaultIcon.svg"),
       isLogin: false,
       userInfo: {},
-      show: false
+      show: false,
+      order: {},
+      orderList: []
     };
   },
   props: {},
@@ -96,30 +106,79 @@ export default {
       this.$router.push("/login");
     },
     leave() {
+      this.$api
+        .loginOut({})
+        .then(res => {
+          console.log(res);
+          this.$store.state.currentUser = null;
+          this.$store.state.searchList = null;
+          this.$store.state.count = null;
+          this.$store.state.length =null;
+          this.$store.state.address = {};
+          this.$store.state.evaluated = 0;
+          localStorage.removeItem("currentUser");
+        })
+        .catch(err => {
+          console.log(err);
+        });
+
       console.log("退出");
+      console.log(this.$store.state.evaluated);
     },
     setInfo() {
       this.show = true;
     },
     toOrder(path) {
-      this.$router.push(path);
+      if (path === "evaluate") {
+        console.log(1111);
+        this.$router.push({ name: path, query: { orderList: this.orderList } });
+      } else {
+        this.$router.push(path);
+      }
     },
-    jump(path,active){
-       this.$router.push({path,query:{active}});
+    jump(path, active) {
+      if (path === "/evaluate") {
+        console.log(1111);
+        this.$router.push({ path, query: { orderList: this.orderList } });
+      } else {
+        this.$router.push({ path, query: { active } });
+      }
     },
-   
+    getOrderNum() {
+      this.$api
+        .getOrderNum()
+        .then(res => {
+          console.log(res);
+        })
+        .catch(err => {
+          console.log(err);
+        });
+    },
+
+    tobeEvaluated() {
+      this.$api
+        .tobeEvaluated()
+        .then(res => {
+          console.log(res);
+          this.orderList = res.data.list;
+          this.$store.state.evaluate = this.orderList.length;
+        })
+        .catch(err => {
+          console.log(err);
+        });
+    }
   },
   mounted() {
-    console.log(JSON.parse(localStorage.getItem("currentUser")));
-    if (
-      this.$store.state.currentUser &&
-      JSON.parse(localStorage.getItem("currentUser"))
-        ? true
-        : false
-    ) {
+    console.log(!this.$store.state.evaluate);
+    this.tobeEvaluated();
+    if (JSON.parse(localStorage.getItem("currentUser"))) {
+      this.$store.state.currentUser = JSON.parse(
+        localStorage.getItem("currentUser")
+      );
       this.userInfo = this.$store.state.currentUser;
+    } else {
+      this.$store.state.currentUser = null;
     }
-    this.userInfo = JSON.parse(localStorage.getItem("currentUser"));
   },
   watch: {},
   computed: {}
@@ -159,6 +218,9 @@ img {
   display: flex;
   margin: 10px 0;
 }
+.menu1 > div:nth-child(4) {
+  position: relative;
+}
 .temp {
   display: flex;
   flex-direction: column;
@@ -184,5 +246,19 @@ img {
 }
 .left > div:first-child {
   font-size: 5.267vw;
+}
+.info {
+  height: 20px;
+  width: 20px;
+  line-height: 20px;
+  text-align: center;
+  position: absolute;
+  top: 0;
+  left: 47px;
+  background: red;
+  border: none;
+  color: white;
+  font-size: 12px;
+  border-radius: 50%;
 }
 </style>

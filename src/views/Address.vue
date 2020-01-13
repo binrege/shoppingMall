@@ -47,13 +47,15 @@ export default {
     TopTittle,
     scroll
   },
-  //  beforeRouteLeave: (to, from, next) => {
-     
-  //    console.log(to.name);
-    
-    
-  // },
- 
+   beforeRouteEnter (to, from, next) {
+     // ...
+     if(from.name==="shoppingPayMent"){
+       next(vm=>{
+          vm.$store.state.from="shoppingPayMent"
+       })
+     }
+     next()
+   },
  
   methods: {
     onAdd() {
@@ -62,7 +64,7 @@ export default {
 
     onSelect(item, index){
         console.log(item);
-      if(this.$route.query.from==="shoppingPayMent"){
+      if(this.$store.state.from==="shoppingPayMent"){
         this.$store.state.address=item
         this.$router.push("/shoppingPayMent")
       }else{

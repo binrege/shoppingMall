@@ -63,6 +63,7 @@ export default {
 
   methods: {
    todetails(goodsId){
+     
      this.$router.push({path:"/details",query:{goodsId}})
    },
    addcar(goodsId){

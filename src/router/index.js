@@ -108,6 +108,18 @@ const routes = [{
         component: () =>
             import ('../views/Evaluate.vue')
     },
+    {
+        path: '/rate',
+        name: 'rate',
+        component: () =>
+            import ('../views/Rate.vue')
+    },
+    {
+        path: '/evaluated',
+        name: 'evaluated',
+        component: () =>
+            import ('../views/Evaluated.vue')
+    },
 ]
 
 const isPro = process.env.NODE_ENV === 'production'
